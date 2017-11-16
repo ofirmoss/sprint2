@@ -1,0 +1,48 @@
+.navContainer{
+    background-color: var(--nav-background-color);
+    height: 60px;
+    width: 370px;
+    align-self: center;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 120px;;
+    padding: 0px;
+}
+
+nav ul li{
+    color: var(--nav-font-color);
+    list-style: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    font-family: lato-bold;
+}
+
+nav ul li:hover{
+    color: var(--nav-font-hover);
+}
+
+nav .logo{
+    width: 64px;
+    height: 55px;
+    /* position: absolute; */
+}
+
+nav .bglogo{
+    width: 180px;
+    height: 90px;
+    position: absolute;
+    
+}
+
+.navlogomodel{
+   /* position: absolute; */
+}

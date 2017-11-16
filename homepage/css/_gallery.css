@@ -1,0 +1,26 @@
+.galleryContainer{
+    width: 370px;
+    height: 736px;
+    background: white;
+    align-self: center;
+}
+
+
+.btn-group .button {
+    background-color: var(--nav-background-color); /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    cursor: pointer;
+    float: right;
+    margin-top: 5px;
+   
+}
+
+.btn-group .button:hover {
+    color: var(--nav-font-hover);
+}
