@@ -40,10 +40,26 @@
     /* background: pink; */
     height: 300px;
     align-items: center;
+    display: none; 
 }
 .imgs img{
     width: 100px;
     height: 100px;
     border-radius: 15px;
     border: 2px solid black;
+}
+
+.keywords{
+    display: flex;
+    /* justify-content: space-around; */
+    flex-wrap: wrap;
+    /* align-items: space-between; */
+    /* margin-top: 20px; */
+    /* background: pink; */
+    /* height: auto;
+    align-items: center; */
+}
+
+.keywords h3{
+    margin-right: 4px;
 }
