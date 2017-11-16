@@ -15,3 +15,7 @@ body{
     background: gray;
 }
 
+header{
+    align-self: center;
+}
+
