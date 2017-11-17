@@ -3,6 +3,7 @@
     height: 736px;
     background: white;
     align-self: center;
+    display: none;
 }
 
 .gallery{
@@ -11,10 +12,14 @@
     justify-content: space-between;
 }
 
+.btn-group{
+    align-self: center;
+    
+}
+
 
 .btn-group .button {
     background-color: var(--nav-background-color); /* Green */
-    border: none;
     color: white;
     padding: 5px 5px;
     text-align: center;
@@ -22,9 +27,9 @@
     display: inline-block;
     font-size: 10px;
     cursor: pointer;
-    float: right;
-    margin-top: 5px;
-   border: solid 1px rgb(70, 69, 69);
+    margin: 5px 0;
+   /* border: solid 3px rgb(70, 69, 69); */
+   font-family: lato-bold;
 }
 
 .btn-group .button:hover {
@@ -56,10 +61,16 @@
     /* align-items: space-between; */
     /* margin-top: 20px; */
     /* background: pink; */
-    /* height: auto;
-    align-items: center; */
+    /* height: 50px; */
+    /* align-items: center; */ 
+    width: 80%;
+    align-self: center;
 }
 
-.keywords h3{
-    margin-right: 4px;
+.keywords h1,h2,h3,h4,h5,h6{
+    font-family: lato-bold; 
+    margin: 0 0 0 5px;
+    color: rgb(145, 140, 140);
+    align-self: center;
+    
 }
