@@ -61,3 +61,7 @@
 .contact p span{
     /* font-weight: bold; */
 }
+
+.contact p i{
+    color: #2eb398;
+}
