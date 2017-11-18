@@ -37,10 +37,9 @@
 
 .aboutContainer section .header{
     display: flex;
-    direction: column;
     flex-wrap: wrap;
     margin: 0;
-    background: blue;
+    /* background: blue; */
     font-family: Maven Pro Regular;
     max-width: 350px;
 }
@@ -71,3 +70,9 @@ line-height: 4.56px;
     margin: 20px;
 }
 
+.text-area{
+display: flex;
+flex-direction: column;
+justify-content: space-around;  
+align-items: space-around;
+}

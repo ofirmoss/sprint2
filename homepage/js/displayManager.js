@@ -1,14 +1,17 @@
 function toggleSearch(){
     document.querySelector('.search-box').classList.remove('display-none');
+    document.querySelector('.imgs').classList.remove('display-none');
+    document.querySelector('.keywords').classList.add('display-none');
     }
     
     function goToProtfolio(){
         document.querySelector('.galleryContainer').classList.remove('display-none');
+        document.querySelector('.imgs').classList.remove('display-none');
         document.querySelector('.bottom-nav').classList.remove('display-none');
         document.querySelector('.aboutContainer').classList.add('display-none');
         document.querySelector('.contactContainer').classList.add('display-none');
         document.querySelector('.keywords').classList.add('display-none');
-    
+        document.querySelector('.search-box').classList.add('display-none');
     }
     
     function goToAbout(){
@@ -29,5 +32,4 @@ function toggleSearch(){
     function goToKeyWords(){
         document.querySelector('.keywords').classList.remove('display-none');
         document.querySelector('.search-box').classList.add('display-none');
-        document.querySelector('.galleryContainer').classList.add('display-none');        
-    }   
+        document.querySelector('.imgs').classList.add('display-none');
