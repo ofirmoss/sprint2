@@ -19,11 +19,11 @@ var imgs = [{
         id: "3",
         url: "img/memes/3.jpg",
         keywords: ["one", "man", "simply"]
-    },",
-        keywords: ["crazy", "
+    },
     {
         id: "4",
-        url: "img/memes/4.jpggirl", "smile"]
+        url: "img/memes/4.jpggirl",
+        keywords: ["crazy","smile", "girl"]        
     }, {
         id: "5",
         url: "img/memes/5.jpg",
@@ -32,7 +32,7 @@ var imgs = [{
 ];
 
 function init(){
-    renderImgs(imgs)
+    renderImgs(imgs);
     renderKeyWords(imgs);
 }
 
