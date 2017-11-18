@@ -11,23 +11,23 @@
     <title>Meme Creator</title>
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <div class="navContainer">
             <nav>
                 <ul class="nav">
-                    <li>protfolio</li>
+                    <li onclick="goToProtfolio()">protfolio</li>
                     <li class="dot">·</li>
-                    <li>about</li>
+                    <li onclick="goToAbout()">about</li>
                 </ul>
 
                 <img class="logo" src="img/navbarlogo.png" alt="">
 
                 <!-- <img class="bglogo" src="img/pointy-thingy.png" alt=""> -->
                 <ul class="nav">
-                    <li>blog</li>
+                    <li >blog</li>
                     <li class="dot">·</li>
-                    <li>get in touch</li>
+                    <li onclick="goToContact()">get in touch</li>
                 </ul>
             </nav>
         </div>
@@ -54,24 +54,31 @@
         <section class="gallery">
 
             <div class="btn-group">
-                <button class="button">gallery</button>
-                <button class="button">search</button>
-                <button class="button">keywords</button>
-
+                <button class="button" onclick="renderImgs(imgs)">gallery</button>
+                <button class="button" onclick="toggleSearch()">search</button>
+                <button class="button" onclick="goToKeyWords()">keywords</button>
+                
             </div>
+            <input type="text" class = "search-box display-none" onchange="toggleSearch()">
             <div class="imgs">
 
             </div>
 
             <div class="keywords">
+                </div>
 
-            </div>
 
         </section>
     </div>
-    <div class="aboutContainer">
+    <div class="aboutContainer display-none">
         <section class="about">
-                <img src="img/image.jpg" class ="profile-image"> 
+
+                <div class="hexagon">
+                        <div class="hexTop"></div>
+                        <div class="hexBottom"></div>
+                      </div>
+                      
+                <!-- <img src="img/profilepic.jpg" class ="profile-image">  -->
             <div class="text-area">
             <div class="header">
             <h1 class = "about-name">Smith Anderson</h1>
@@ -88,7 +95,7 @@
         </section>
     </div>
 
-    <div class="contactContainer">
+    <div class="contactContainer display-none">
         <section class="contact">
             <div>
                 <h1>get in touch</h1>
@@ -111,11 +118,12 @@
                 <p><img src="">+ 3528 331 86 35</p>
                 <p><img src="">info@hexalcorp.com</p>
             </div>
-             
+
         </section>
     </div>
 
     <script src="js/gallery.js"></script>
+    <script src="js\displayManager.js"></script>
 </body>
 
 </html>

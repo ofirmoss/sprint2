@@ -4,7 +4,7 @@
 @import "_gallery.css";
 @import "_contact.css";
 @import "_aboutUs.css";
-
+@import "_hexagon.css";
 
 
 body{
@@ -19,3 +19,6 @@ header{
     align-self: center;
 }
 
+.display-none{
+display: none;
+}

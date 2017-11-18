@@ -31,8 +31,10 @@ var imgs = [{
     }
 ];
 
-renderImgs(imgs);
-renderKeywords(imgs);
+function init(){
+    renderImgs(imgs)
+    renderKeyWords(imgs);
+}
 
 function renderImgs(imgs) {
     var strHtml = '';
@@ -47,9 +49,10 @@ function renderImgs(imgs) {
 
 
 
-function renderKeywords(imgs) {
+function renderKeyWords(imgs) {
     var strHtml = '';
     var keywordsRepeats = checkreapets(imgs);
+    console.log(keywordsRepeats);
 
     keywordsRepeats.forEach(function (keyword) {
         if (keyword.repeats === 1) strHtml += `<h6>${keyword.txt} </h6>`;
@@ -61,6 +64,7 @@ function renderKeywords(imgs) {
     })
 
     var keywords = document.querySelector('.keywords');
+    console.log(strHtml);
     keywords.innerHTML = strHtml;
 }
 
@@ -97,18 +101,41 @@ return repeatscount;
 
 
 
-function filterTags(tagInput){
+function filterTags(tagInput,imgs){
     var tags = tagInput.split(' ');
-    var filtered = gImgs;
+    var filtered = imgs;
      for (let i = 0; i < tags.length; i++) {
          var tag = tags[i];
  
           filtered = filtered.filter(function isContainingTag(img){
-             if(img.keywords.indexOf(tag) === -1) return false;
-             return true;
+             return (img.keywords.indexOf(tag) !== -1)
          })
          }
          console.log(filtered);
          renderImgs(filtered);
      }
  
+
+
+
+
+
+
+        // function renderHexaImgs(imgs) {
+        //     var strHtml = '';
+        
+        //     imgs.forEach(function (img, idx) {
+        //         strHtml +=         ` <div class="hexagon>
+        //         <div class="hexTop"></div>
+        //         <div class="hexBottom"></div>
+        //       </div>
+              
+        //      `
+        //     });
+        // console.log(strHtml);
+        //     var gallery = document.querySelector('.imgs');
+        //     gallery.innerHTML = strHtml;
+        // }
+
+
+
