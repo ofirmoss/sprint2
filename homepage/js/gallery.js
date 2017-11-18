@@ -19,11 +19,11 @@ var imgs = [{
         id: "3",
         url: "img/memes/3.jpg",
         keywords: ["one", "man", "simply"]
-    },
+    },",
+        keywords: ["crazy", "
     {
         id: "4",
-        url: "img/memes/4.jpg",
-        keywords: ["crazy", "girl", "smile"]
+        url: "img/memes/4.jpggirl", "smile"]
     }, {
         id: "5",
         url: "img/memes/5.jpg",
@@ -99,7 +99,7 @@ return repeatscount;
 
 function filterTags(tagInput){
     var tags = tagInput.split(' ');
-    var filtered = gImgs;
+    var filtered = gImgs.splice();
      for (let i = 0; i < tags.length; i++) {
          var tag = tags[i];
  

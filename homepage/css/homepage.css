@@ -4,6 +4,7 @@
 @import "_gallery.css";
 @import "_contact.css";
 @import "_aboutUs.css";
+@import "_copyrights.css";
 
 
 
@@ -19,3 +20,6 @@ header{
     align-self: center;
 }
 
+.hider{
+    display: none;
+}

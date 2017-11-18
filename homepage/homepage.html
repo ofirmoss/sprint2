@@ -16,9 +16,9 @@
         <div class="navContainer">
             <nav>
                 <ul class="nav">
-                    <li>protfolio</li>
+                    <li onclick="changePage('galleryContainer')">protfolio</li>
                     <li class="dot">·</li>
-                    <li>about</li>
+                    <li onclick="changePage('aboutContainer')">about</li>
                 </ul>
 
                 <img class="logo" src="img/navbarlogo.png" alt="">
@@ -27,7 +27,7 @@
                 <ul class="nav">
                     <li>blog</li>
                     <li class="dot">·</li>
-                    <li>get in touch</li>
+                    <li onclick="changePage('contactContainer')">get in touch</li>
                 </ul>
             </nav>
         </div>
@@ -116,8 +116,11 @@
             
             
         </section>
-    </div>
 
+    </div>
+    <section class="copyrights">© Copyright 2013 by PSDchat</section>
+
+    <script src="js/menues.js"></script>
     <script src="js/gallery.js"></script>
 </body>
 
