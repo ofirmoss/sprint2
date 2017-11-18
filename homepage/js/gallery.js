@@ -104,24 +104,6 @@ function checkreapets(imgs) {
 function filterTags(tagInput, imgs) {
     console.log(tagInput);
     var tags = tagInput.split(' ');
-<<<<<<< HEAD
-    var filtered = imgs;
-    for (let i = 0; i < tags.length; i++) {
-        var tag = tags[i];
-
-        filtered = filtered.filter(function isContainingTag(img) {
-            return (img.keywords.indexOf(tag) !== -1)
-        })
-    }
-    // console.log(filtered);
-    return filtered;
-}
-
-function renderSearch(tagInput){
-    var filtered = filterTags(tagInput,imgs);
-    renderImgs(filtered);
-}
-=======
     var filtered = gImgs.splice();
      for (let i = 0; i < tags.length; i++) {
          var tag = tags[i];
@@ -134,7 +116,6 @@ function renderSearch(tagInput){
          renderImgs(filtered);
      }
  
->>>>>>> 75167c48fccfebcd5768d276b40405a9d4c48639
 
 
 
