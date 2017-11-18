@@ -1,37 +1,37 @@
 'use strict'
 
 var imgs = [{
-        id: "0",
-        url: "img/memes/0.jpg",
-        keywords: ["burning", "smile", "child"]
-    },
-    {
-        id: "1",
-        url: "img/memes/1.jpg",
-        keywords: ["crying", "jorden", "sad"]
-    },
-    {
-        id: "2",
-        url: "img/memes/2.jpg",
-        keywords: ["cartoon", "blame", "not"]
-    },
-    {
-        id: "3",
-        url: "img/memes/3.jpg",
-        keywords: ["one", "man", "simply"]
-    },
-    {
-        id: "4",
-        url: "img/memes/4.jpg",
-        keywords: ["crazy","smile", "girl"]        
-    }, {
-        id: "5",
-        url: "img/memes/5.jpg",
-        keywords: ["baby", "success", "victory"]
-    }
+    id: "0",
+    url: "img/memes/0.jpg",
+    keywords: ["burning", "smile", "child"]
+},
+{
+    id: "1",
+    url: "img/memes/1.jpg",
+    keywords: ["crying", "jorden", "sad"]
+},
+{
+    id: "2",
+    url: "img/memes/2.jpg",
+    keywords: ["cartoon", "blame", "not"]
+},
+{
+    id: "3",
+    url: "img/memes/3.jpg",
+    keywords: ["one", "man", "simply"]
+},
+{
+    id: "4",
+    url: "img/memes/4.jpg",
+    keywords: ["crazy", "girl", "smile"]
+}, {
+    id: "5",
+    url: "img/memes/5.jpg",
+    keywords: ["baby", "success", "victory"]
+}
 ];
 
-function init(){
+function init() {
     renderImgs(imgs);
     renderKeyWords(imgs);
 }
@@ -104,18 +104,22 @@ function checkreapets(imgs) {
 function filterTags(tagInput, imgs) {
     console.log(tagInput);
     var tags = tagInput.split(' ');
-    var filtered = gImgs.splice();
-     for (let i = 0; i < tags.length; i++) {
-         var tag = tags[i];
- 
-          filtered = filtered.filter(function isContainingTag(img){
-             return (img.keywords.indexOf(tag) !== -1)
-         })
-         }
-         console.log(filtered);
-         renderImgs(filtered);
-     }
- 
+    var filtered = imgs;
+    for (let i = 0; i < tags.length; i++) {
+        var tag = tags[i];
+
+        filtered = filtered.filter(function isContainingTag(img) {
+            return (img.keywords.indexOf(tag) !== -1)
+        })
+    }
+    // console.log(filtered);
+    return filtered;
+}
+
+function renderSearch(tagInput){
+    var filtered = filterTags(tagInput,imgs);
+    renderImgs(filtered);
+}
 
 
 
