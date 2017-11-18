@@ -22,7 +22,7 @@ var imgs = [{
     },
     {
         id: "4",
-        url: "img/memes/4.jpggirl",
+        url: "img/memes/4.jpg",
         keywords: ["crazy","smile", "girl"]        
     }, {
         id: "5",
