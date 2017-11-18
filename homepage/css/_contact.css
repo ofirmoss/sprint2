@@ -1,8 +1,8 @@
 @import "_vars.css";
 .contactContainer {
     width: 370px;
-    height: 736px;
-    /* height: 2000px; */
+    /* height: 736px; */
+    height: 1000px;
     align-self: center;
     background: var(--contactUs-background-color);
     /* display: none; */
@@ -40,7 +40,7 @@
     background-color: #454545;
     color: #868686;
     border: none;
-    height: 20px;
+    height: 40px;
     font-family: lato-regular;    
 }
 
@@ -48,7 +48,7 @@
     background-color: #454545;
     color: #868686;
     border: none;
-    height: 40%;
+    height: 25%;
     font-family: lato-regular;    
 }
 

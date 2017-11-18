@@ -9,10 +9,17 @@
 
  */
 
+ .aboutContainer{
+    width: 370px;
+    height: 736px;
+    align-self: center;
+ }
+
 
 .about{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 

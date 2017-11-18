@@ -103,11 +103,7 @@ return repeatscount;
 
 function filterTags(tagInput,imgs){
     var tags = tagInput.split(' ');
-<<<<<<< HEAD
     var filtered = gImgs.splice();
-=======
-    var filtered = imgs;
->>>>>>> 412aa11f5a4b21f5f771908ce682b904dd414e1a
      for (let i = 0; i < tags.length; i++) {
          var tag = tags[i];
  
