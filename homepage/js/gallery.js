@@ -1,37 +1,37 @@
 'use strict'
 
 var imgs = [{
-        id: "0",
-        url: "img/memes/0.jpg",
-        keywords: ["burning", "smile", "child"]
-    },
-    {
-        id: "1",
-        url: "img/memes/1.jpg",
-        keywords: ["crying", "jorden", "sad"]
-    },
-    {
-        id: "2",
-        url: "img/memes/2.jpg",
-        keywords: ["cartoon", "blame", "not"]
-    },
-    {
-        id: "3",
-        url: "img/memes/3.jpg",
-        keywords: ["one", "man", "simply"]
-    },
-    {
-        id: "4",
-        url: "img/memes/4.jpg",
-        keywords: ["crazy", "girl", "smile"]
-    }, {
-        id: "5",
-        url: "img/memes/5.jpg",
-        keywords: ["baby", "success", "victory"]
-    }
+    id: "0",
+    url: "img/memes/0.jpg",
+    keywords: ["burning", "smile", "child"]
+},
+{
+    id: "1",
+    url: "img/memes/1.jpg",
+    keywords: ["crying", "jorden", "sad"]
+},
+{
+    id: "2",
+    url: "img/memes/2.jpg",
+    keywords: ["cartoon", "blame", "not"]
+},
+{
+    id: "3",
+    url: "img/memes/3.jpg",
+    keywords: ["one", "man", "simply"]
+},
+{
+    id: "4",
+    url: "img/memes/4.jpg",
+    keywords: ["crazy", "girl", "smile"]
+}, {
+    id: "5",
+    url: "img/memes/5.jpg",
+    keywords: ["baby", "success", "victory"]
+}
 ];
 
-function init(){
+function init() {
     renderImgs(imgs)
     renderKeyWords(imgs);
 }
@@ -39,8 +39,8 @@ function init(){
 function renderImgs(imgs) {
     var strHtml = '';
 
-    imgs.forEach(function (img, idx) {
-        strHtml += `<img src="img/memes/${idx}.jpg" >`
+    imgs.forEach(function (img) {
+        strHtml += '<img src=' + img.url + ' >'
     });
 
     var gallery = document.querySelector('.imgs');
@@ -52,7 +52,7 @@ function renderImgs(imgs) {
 function renderKeyWords(imgs) {
     var strHtml = '';
     var keywordsRepeats = checkreapets(imgs);
-    console.log(keywordsRepeats);
+    // console.log(keywordsRepeats);
 
     keywordsRepeats.forEach(function (keyword) {
         if (keyword.repeats === 1) strHtml += `<h6>${keyword.txt} </h6>`;
@@ -64,14 +64,14 @@ function renderKeyWords(imgs) {
     })
 
     var keywords = document.querySelector('.keywords');
-    console.log(strHtml);
+    // console.log(strHtml);
     keywords.innerHTML = strHtml;
 }
 
 
 
 function checkreapets(imgs) {
-    var repeatscount = [{txt: imgs[0].keywords[0], repeats: 1}];
+    var repeatscount = [{ txt: imgs[0].keywords[0], repeats: 1 }];
     var counter = 1;
 
     for (var i = 0; i < imgs.length; i++) {
@@ -80,41 +80,46 @@ function checkreapets(imgs) {
             repeatscount.forEach(function (count) {
                 if (count.txt === currWord) counter++;
             })
-        if (counter === 1) {
-            repeatscount.push({
-                txt: currWord,
-                repeats: counter
+            if (counter === 1) {
+                repeatscount.push({
+                    txt: currWord,
+                    repeats: counter
+                });
+            } repeatscount.forEach(function (count) {
+                if (count.txt === currWord) {
+                    count.repeats = counter;
+                }
             });
-        }  repeatscount.forEach(function (count) {
-            if (count.txt === currWord) {
-                count.repeats= counter;
-            }
-        });
-        counter = 1;
+            counter = 1;
+        }
+
     }
 
+    repeatscount[0].repeats -= 1;
+    return repeatscount;
 }
 
-repeatscount[0].repeats-=1;
-return repeatscount;
-}
 
 
-
-function filterTags(tagInput,imgs){
+function filterTags(tagInput, imgs) {
+    console.log(tagInput);
     var tags = tagInput.split(' ');
     var filtered = imgs;
-     for (let i = 0; i < tags.length; i++) {
-         var tag = tags[i];
- 
-          filtered = filtered.filter(function isContainingTag(img){
-             return (img.keywords.indexOf(tag) !== -1)
-         })
-         }
-         console.log(filtered);
-         renderImgs(filtered);
-     }
- 
+    for (let i = 0; i < tags.length; i++) {
+        var tag = tags[i];
+
+        filtered = filtered.filter(function isContainingTag(img) {
+            return (img.keywords.indexOf(tag) !== -1)
+        })
+    }
+    // console.log(filtered);
+    return filtered;
+}
+
+function renderSearch(tagInput){
+    var filtered = filterTags(tagInput,imgs);
+    renderImgs(filtered);
+}
 
 
 
@@ -123,13 +128,13 @@ function filterTags(tagInput,imgs){
 
         // function renderHexaImgs(imgs) {
         //     var strHtml = '';
-        
+
         //     imgs.forEach(function (img, idx) {
         //         strHtml +=         ` <div class="hexagon>
         //         <div class="hexTop"></div>
         //         <div class="hexBottom"></div>
         //       </div>
-              
+
         //      `
         //     });
         // console.log(strHtml);
@@ -139,3 +144,14 @@ function filterTags(tagInput,imgs){
 
 
 
+        // function renderImgs(imgs) {
+        //     var strHtml = '';
+        
+        //     imgs.forEach(function (img, idx) {
+        //         strHtml += `<img src="img/memes/${idx}.jpg" >`
+        //     });
+        
+        //     var gallery = document.querySelector('.imgs');
+        //     gallery.innerHTML = strHtml;
+        // }
+        
