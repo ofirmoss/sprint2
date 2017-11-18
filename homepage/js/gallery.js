@@ -94,3 +94,21 @@ function checkreapets(imgs) {
 repeatscount[0].repeats-=1;
 return repeatscount;
 }
+
+
+
+function filterTags(tagInput){
+    var tags = tagInput.split(' ');
+    var filtered = gImgs;
+     for (let i = 0; i < tags.length; i++) {
+         var tag = tags[i];
+ 
+          filtered = filtered.filter(function isContainingTag(img){
+             if(img.keywords.indexOf(tag) === -1) return false;
+             return true;
+         })
+         }
+         console.log(filtered);
+         renderImgs(filtered);
+     }
+ 
