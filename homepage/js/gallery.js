@@ -1,6 +1,7 @@
 'use strict'
 
 var imgs = [{
+<<<<<<< HEAD
     id: "0",
     url: "img/memes/0.jpg",
     keywords: ["burning", "smile", "child"]
@@ -33,6 +34,40 @@ var imgs = [{
 
 function init() {
     renderImgs(imgs)
+=======
+        id: "0",
+        url: "img/memes/0.jpg",
+        keywords: ["burning", "smile", "child"]
+    },
+    {
+        id: "1",
+        url: "img/memes/1.jpg",
+        keywords: ["crying", "jorden", "sad"]
+    },
+    {
+        id: "2",
+        url: "img/memes/2.jpg",
+        keywords: ["cartoon", "blame", "not"]
+    },
+    {
+        id: "3",
+        url: "img/memes/3.jpg",
+        keywords: ["one", "man", "simply"]
+    },
+    {
+        id: "4",
+        url: "img/memes/4.jpggirl",
+        keywords: ["crazy","smile", "girl"]        
+    }, {
+        id: "5",
+        url: "img/memes/5.jpg",
+        keywords: ["baby", "success", "victory"]
+    }
+];
+
+function init(){
+    renderImgs(imgs);
+>>>>>>> 75167c48fccfebcd5768d276b40405a9d4c48639
     renderKeyWords(imgs);
 }
 
@@ -104,6 +139,7 @@ function checkreapets(imgs) {
 function filterTags(tagInput, imgs) {
     console.log(tagInput);
     var tags = tagInput.split(' ');
+<<<<<<< HEAD
     var filtered = imgs;
     for (let i = 0; i < tags.length; i++) {
         var tag = tags[i];
@@ -120,6 +156,20 @@ function renderSearch(tagInput){
     var filtered = filterTags(tagInput,imgs);
     renderImgs(filtered);
 }
+=======
+    var filtered = gImgs.splice();
+     for (let i = 0; i < tags.length; i++) {
+         var tag = tags[i];
+ 
+          filtered = filtered.filter(function isContainingTag(img){
+             return (img.keywords.indexOf(tag) !== -1)
+         })
+         }
+         console.log(filtered);
+         renderImgs(filtered);
+     }
+ 
+>>>>>>> 75167c48fccfebcd5768d276b40405a9d4c48639
 
 
 

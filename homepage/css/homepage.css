@@ -4,6 +4,7 @@
 @import "_gallery.css";
 @import "_contact.css";
 @import "_aboutUs.css";
+@import "_copyrights.css";
 @import "_hexagon.css";
 
 
@@ -19,6 +20,9 @@ header{
     align-self: center;
 }
 
+.hider{
+    display: none;
+}
 .display-none{
 display: none;
 }
