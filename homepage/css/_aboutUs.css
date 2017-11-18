@@ -10,18 +10,21 @@
  */
 
 
-
+.about{
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 .aboutContainer section{
-    display: none;
+    display: flex;
     /* change to flex to display! */
 
 
 
     justify-content: center;
     width: 100%;
-    height: 350px;
+    /* height: 350px; */
     background: #2eb398;
 }
 
@@ -60,3 +63,4 @@ line-height: 4.56px;
     height: 150px;
     margin: 20px;
 }
+

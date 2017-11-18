@@ -11,23 +11,33 @@
     <title>Meme Creator</title>
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <div class="navContainer">
             <nav>
                 <ul class="nav">
+<<<<<<< HEAD
                     <li onclick="changePage('galleryContainer')">protfolio</li>
                     <li class="dot">·</li>
                     <li onclick="changePage('aboutContainer')">about</li>
+=======
+                    <li onclick="goToProtfolio()">protfolio</li>
+                    <li class="dot">·</li>
+                    <li onclick="goToAbout()">about</li>
+>>>>>>> 412aa11f5a4b21f5f771908ce682b904dd414e1a
                 </ul>
 
                 <img class="logo" src="img/navbarlogo.png" alt="">
 
                 <!-- <img class="bglogo" src="img/pointy-thingy.png" alt=""> -->
                 <ul class="nav">
-                    <li>blog</li>
+                    <li >blog</li>
                     <li class="dot">·</li>
+<<<<<<< HEAD
                     <li onclick="changePage('contactContainer')">get in touch</li>
+=======
+                    <li onclick="goToContact()">get in touch</li>
+>>>>>>> 412aa11f5a4b21f5f771908ce682b904dd414e1a
                 </ul>
             </nav>
         </div>
@@ -54,24 +64,31 @@
         <section class="gallery">
 
             <div class="btn-group">
-                <button class="button">gallery</button>
-                <button class="button">search</button>
-                <button class="button">keywords</button>
-
+                <button class="button" onclick="renderImgs(imgs)">gallery</button>
+                <button class="button" onclick="toggleSearch()">search</button>
+                <button class="button" onclick="goToKeyWords()">keywords</button>
+                
             </div>
+            <input type="text" class = "search-box display-none" onchange="toggleSearch()">
             <div class="imgs">
 
             </div>
 
             <div class="keywords">
+                </div>
 
-            </div>
 
         </section>
     </div>
-    <div class="aboutContainer">
+    <div class="aboutContainer display-none">
         <section class="about">
-                <img src="img/image.jpg" class ="profile-image"> 
+
+                <div class="hexagon">
+                        <div class="hexTop"></div>
+                        <div class="hexBottom"></div>
+                      </div>
+                      
+                <!-- <img src="img/profilepic.jpg" class ="profile-image">  -->
             <div class="text-area">
             <div class="header">
             <h1 class = "about-name">Smith Anderson</h1>
@@ -88,7 +105,7 @@
         </section>
     </div>
 
-    <div class="contactContainer">
+    <div class="contactContainer display-none">
         <section class="contact">
             <div>
                 <h1>get in touch</h1>
@@ -111,10 +128,14 @@
                 <p><i class="fa fa-phone" aria-hidden="true"></i> + 3528 331 86 35</p>
                 <p><i class="fa fa-envelope" aria-hidden="true"></i> info@hexalcorp.com</p>
             </div>
+<<<<<<< HEAD
+
+=======
             
             
             
             
+>>>>>>> eacc35198877551a089b0d6b340275f1c833dda1
         </section>
 
     </div>
@@ -122,6 +143,7 @@
 
     <script src="js/menues.js"></script>
     <script src="js/gallery.js"></script>
+    <script src="js\displayManager.js"></script>
 </body>
 
 </html>

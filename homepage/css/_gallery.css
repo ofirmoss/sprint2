@@ -3,7 +3,7 @@
     height: 736px;
     background: white;
     align-self: center;
-    display: none;
+    /* display: none; */
 }
 
 .gallery{
@@ -45,7 +45,7 @@
     /* background: pink; */
     height: 300px;
     align-items: center;
-    display: none; 
+    /* display: none;  */
 }
 .imgs img{
     width: 100px;
@@ -73,4 +73,9 @@
     color: rgb(145, 140, 140);
     align-self: center;
     
+}
+
+.search-box{
+    width: 200px;
+    margin: auto;
 }

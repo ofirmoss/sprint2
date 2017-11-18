@@ -4,8 +4,12 @@
 @import "_gallery.css";
 @import "_contact.css";
 @import "_aboutUs.css";
+<<<<<<< HEAD
 @import "_copyrights.css";
 
+=======
+@import "_hexagon.css";
+>>>>>>> 412aa11f5a4b21f5f771908ce682b904dd414e1a
 
 
 body{
@@ -20,6 +24,12 @@ header{
     align-self: center;
 }
 
+<<<<<<< HEAD
 .hider{
     display: none;
 }
+=======
+.display-none{
+display: none;
+}
+>>>>>>> 412aa11f5a4b21f5f771908ce682b904dd414e1a
