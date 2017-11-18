@@ -29,6 +29,6 @@ function toggleSearch(){
     function goToKeyWords(){
         document.querySelector('.keywords').classList.remove('display-none');
         document.querySelector('.search-box').classList.add('display-none');
-        
+        document.querySelector('.galleryContainer').classList.add('display-none');        
 
     }   
