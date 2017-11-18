@@ -41,7 +41,8 @@
     color: #868686;
     border: none;
     height: 40px;
-    font-family: lato-regular;    
+    font-family: lato-regular; 
+    font-size: 12pt;    
 }
 
 .contact textarea {
@@ -50,6 +51,7 @@
     border: none;
     height: 25%;
     font-family: lato-regular;    
+    font-size: 12pt;    
 }
 
 .contact button{
@@ -60,6 +62,7 @@
     align-self: center;
     font-family: lato-bold;
     color: white;
+    font-size: 12pt;    
 }
 
 .contact p{

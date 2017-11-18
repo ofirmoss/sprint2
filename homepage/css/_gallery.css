@@ -14,12 +14,18 @@
 
 .btn-group{
     align-self: center;
-    
+    /* border: 2px solid black; */
+    border-radius: 15px;
+  background-color: var(--nav-background-color); 
+  color: var(--nav-font-hover);
+  height: 20px;
+  display: flex;
 }
 
 
 .btn-group .button {
-    background-color: var(--nav-background-color); /* Green */
+    /* background-color: var(--nav-background-color);  */
+    background: transparent;
     color: white;
     padding: 5px 5px;
     text-align: center;
@@ -29,7 +35,9 @@
     cursor: pointer;
     margin: 5px 0;
    /* border: solid 3px rgb(70, 69, 69); */
+   border: none;    
    font-family: lato-bold;
+   align-self: center;
 }
 
 .btn-group .button:hover {
