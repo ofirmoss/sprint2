@@ -1,40 +1,6 @@
 'use strict'
 
 var imgs = [{
-<<<<<<< HEAD
-    id: "0",
-    url: "img/memes/0.jpg",
-    keywords: ["burning", "smile", "child"]
-},
-{
-    id: "1",
-    url: "img/memes/1.jpg",
-    keywords: ["crying", "jorden", "sad"]
-},
-{
-    id: "2",
-    url: "img/memes/2.jpg",
-    keywords: ["cartoon", "blame", "not"]
-},
-{
-    id: "3",
-    url: "img/memes/3.jpg",
-    keywords: ["one", "man", "simply"]
-},
-{
-    id: "4",
-    url: "img/memes/4.jpg",
-    keywords: ["crazy", "girl", "smile"]
-}, {
-    id: "5",
-    url: "img/memes/5.jpg",
-    keywords: ["baby", "success", "victory"]
-}
-];
-
-function init() {
-    renderImgs(imgs)
-=======
         id: "0",
         url: "img/memes/0.jpg",
         keywords: ["burning", "smile", "child"]
@@ -67,7 +33,6 @@ function init() {
 
 function init(){
     renderImgs(imgs);
->>>>>>> 75167c48fccfebcd5768d276b40405a9d4c48639
     renderKeyWords(imgs);
 }
 
