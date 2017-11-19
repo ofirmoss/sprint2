@@ -12,6 +12,7 @@ function toggleSearch(){
         document.querySelector('.contactContainer').classList.add('display-none');
         document.querySelector('.keywords').classList.add('display-none');
         document.querySelector('.search-box').classList.add('display-none');
+        renderImgs(imgs);
     }
     
     function goToAbout(){
