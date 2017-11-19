@@ -93,3 +93,6 @@ align-self: center;
     position: relative;
 }
 
+.memeMakerContainer ul input{
+    width:30px;
+}

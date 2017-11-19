@@ -16,9 +16,12 @@ function addtxt(){
     <i onclick=removeTxt(${txtCount}) class="fa fa-trash" aria-hidden="true"></i>    
     </div>  
 `
-txtCount++;
-renderCanvasImg();
 
+renderCanvasImg();
+var id = '#txt' + txtCount;
+document.querySelector(id + ' input').style.fontSize = currSize +'px';
+console.log(currSize);
+txtCount++;
 // var txt = document.querySelector('');
 }
 
@@ -80,9 +83,24 @@ var mydragg = function(){
 }();
 
 
+var currSize = 15;
+
+function initiateFontSize(){
+    currSize = document.querySelector('.font-size').value;
+    console.log(currSize);
+    var textDivs = document.querySelectorAll('.memeContainer input');
+    changeFontSize(textDivs,currSize);
+}
 
 
 
+function changeFontSize(nodeList,wantedFontSize){
+for (let i = 0; i < nodeList.length; i++) {
+    nodeList[i].style.fontSize = wantedFontSize + 'px';    
+
+    
+}
+}
 
 
 
