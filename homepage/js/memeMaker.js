@@ -2,6 +2,7 @@
 
 var txtCount = 1;
 
+var gCurrImg;
 
 window.onload = function () {
     renderCanvasImg();

@@ -120,24 +120,56 @@ function filterTags(tagInput, imgs) {
     return filtered;
 }
 
-function renderSearch(tagInput) {
-    var filtered = filterTags(tagInput, imgs);
+function renderSearch(input) {
+    // console.log(input);
+    var filtered = filterTagsByChars(input, imgs);
     renderImgs(filtered);
 }
 
 
-function listenToSearch() {
+// function listenToSearch() {
 
-    if (event.keyCode === 13) {
-        var userInput = document.querySelector('.search-box').value
-        renderSearch(userInput);
-    };
+//     if (event.keyCode === 13) {
+//         var userInput = document.querySelector('.search-box').value
+//         renderSearch(userInput);
+//     };
 
-}
+// }
  
  window.onload =  init();
 
 
+ function filterTagsByChars(tagInput, imgs) {
+    var tags = tagInput.split(' ');
+    var filtered = imgs.slice();
+    for (let i = 0; i < tags.length; i++) {
+        var tag = tags[i];
+        filtered = filtered.filter(function isContainingTag(img,idx) {
+            for (let j = 0; j < img.keywords.length; j++) {
+                var keyword = img.keywords[j];
+
+                if(keyword.indexOf(tag) !== -1) return true;
+            }
+        })
+    }
+    // console.log(filtered);
+    return filtered;
+}
+
+
+// var tags = tagInput.split(' ');
+// var filtered = imgs.slice();
+// for (let i = 0; i < tags.length; i++) {
+//     var tag = tags[i];
+//     for (let j = 0; j < imgs.length; j++) {
+//         var img = imgs[j];
+//         imgs[j].filter(function isContaining(img,idx){
+            
+//         })
+        
+//     }
+    
+// }
 
 
 

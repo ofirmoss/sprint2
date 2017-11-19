@@ -3,6 +3,7 @@ function toggleSearch(){
     document.querySelector('.imgs').classList.remove('display-none');
     document.querySelector('.keywords').classList.add('display-none');
     document.querySelector('.memeMakerContainer').classList.add('display-none');
+    document.querySelector('.imgs').innerHTML = '';
     
     }
     
