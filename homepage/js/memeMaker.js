@@ -1,21 +1,30 @@
 'use strict'
 
+var txtCount = 1;
+
 window.onload = function () {
     renderCanvasImg();
 };
 
 function addtxt(){
+
     var memeContainer = document.querySelector('.memeContainer');
     memeContainer.innerHTML += `
     
-    <div class="mydiv" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");'">
+    <div id="txt${txtCount}" class="mydiv" onmousedown='mydragg.startMoving(this,"container",event);' onmouseup='mydragg.stopMoving("container");'">
     <input type="text">
+    <i onclick=removeTxt(${txtCount}) class="fa fa-trash" aria-hidden="true"></i>    
     </div>  
 `
-
+txtCount++;
 renderCanvasImg();
 
 // var txt = document.querySelector('');
+}
+
+function removeTxt(txtIdx){
+    var id = '#txt'+txtIdx
+    document.querySelector(id).classList.add('display-none');
 }
 
 function renderCanvasImg() {
