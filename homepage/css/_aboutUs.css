@@ -13,28 +13,33 @@
     width: 370px;
     height: 736px;
     align-self: center;
+    display: flex;
  }
 
 
 .about{
+    padding: 20px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
     width: 100%;
     height: 100%;
+    /* change to flex to display! */
+    width: 100%;
+    /* height: 350px; */
+    background: #2eb398;
+
 }
 
 
-.aboutContainer section{
+
     display: flex;
     /* change to flex to display! */
-
-
-
     justify-content: center;
     width: 100%;
     /* height: 350px; */
     background: #2eb398;
-}
+
 
 .aboutContainer section .header{
     display: flex;

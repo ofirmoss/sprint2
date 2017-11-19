@@ -40,7 +40,7 @@ function renderImgs(imgs) {
     var strHtml = '';
 
     imgs.forEach(function (img) {
-        strHtml += '<img src=' + img.url + ' >'
+        strHtml += `<img onclick= createMeme(${img.id}) src='${img.url}'>`
     });
 
     var gallery = document.querySelector('.imgs');

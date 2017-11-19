@@ -6,7 +6,12 @@ window.onload = function () {
     renderCanvasImg();
 };
 
-function addtxt(){
+function createMeme(imgId) {
+    document.querySelector('canvas').innerHTML = `<img class="memeImg" src="img/memes/${imgId}.jpg">`
+    renderCanvasImg();
+}
+
+function addtxt() {
 
     var memeContainer = document.querySelector('.memeContainer');
     memeContainer.innerHTML += `
@@ -16,14 +21,14 @@ function addtxt(){
     <i onclick=removeTxt(${txtCount}) class="fa fa-trash" aria-hidden="true"></i>    
     </div>  
 `
-txtCount++;
-renderCanvasImg();
+    txtCount++;
+    renderCanvasImg();
 
-// var txt = document.querySelector('');
+    // var txt = document.querySelector('');
 }
 
-function removeTxt(txtIdx){
-    var id = '#txt'+txtIdx
+function removeTxt(txtIdx) {
+    var id = '#txt' + txtIdx
     document.querySelector(id).classList.add('display-none');
 }
 
@@ -35,51 +40,55 @@ function renderCanvasImg() {
 }
 
 
-var mydragg = function(){
+var mydragg = function () {
     return {
-        move : function(divid,xpos,ypos){
+        move: function (divid, xpos, ypos) {
             divid.style.left = xpos + 'px';
             divid.style.top = ypos + 'px';
         },
-        startMoving : function(divid,container,evt){
+        startMoving: function (divid, container, evt) {
             evt = evt || window.event;
             var posX = evt.clientX,
                 posY = evt.clientY,
-            divTop = divid.style.top,
-            divLeft = divid.style.left,
-            eWi = parseInt(divid.style.width),
-            eHe = parseInt(divid.style.height),
-            cWi = parseInt(document.querySelector('.memeContainer').style.width),
-            cHe = parseInt(document.querySelector('.memeContainer').style.height);
-            document.querySelector('.memeContainer').style.cursor='move';
-            divTop = divTop.replace('px','');
-            divLeft = divLeft.replace('px','');
+                divTop = divid.style.top,
+                divLeft = divid.style.left,
+                eWi = parseInt(divid.style.width),
+                eHe = parseInt(divid.style.height),
+                cWi = parseInt(document.querySelector('.memeContainer').style.width),
+                cHe = parseInt(document.querySelector('.memeContainer').style.height);
+            document.querySelector('.memeContainer').style.cursor = 'move';
+            divTop = divTop.replace('px', '');
+            divLeft = divLeft.replace('px', '');
             var diffX = posX - divLeft,
                 diffY = posY - divTop;
-            document.onmousemove = function(evt){
+            document.onmousemove = function (evt) {
                 evt = evt || window.event;
                 var posX = evt.clientX,
                     posY = evt.clientY,
                     aX = posX - diffX,
                     aY = posY - diffY;
-                    if (aX < 0) aX = 0;
-                    if (aY < 0) aY = 0;
-                    if (aX > 150) aX = 150;
-                    if (aY > 150) aY = 150;
-                    if (aX + eWi > cWi) aX = cWi - eWi;
-                    if (aY + eHe > cHe) aY = cHe -eHe;
-                mydragg.move(divid,aX,aY);
+                if (aX < 0) aX = 0;
+                if (aY < 0) aY = 0;
+                if (aX > 150) aX = 150;
+                if (aY > 150) aY = 150;
+                if (aX + eWi > cWi) aX = cWi - eWi;
+                if (aY + eHe > cHe) aY = cHe - eHe;
+                mydragg.move(divid, aX, aY);
             }
         },
-        stopMoving : function(container){
+        stopMoving: function (container) {
             var a = document.createElement('script');
-            document.querySelector('.memeContainer').style.cursor='default';
-            document.onmousemove = function(){}
+            document.querySelector('.memeContainer').style.cursor = 'default';
+            document.onmousemove = function () {}
         },
     }
 }();
 
-
+function downloadImg(elLink) {
+    var canvas = document.querySelector('canvas');
+    elLink.href = canvas.toDataURL();
+    elLink.download = 'perfectMeme.jpg';
+}
 
 
 
@@ -109,7 +118,7 @@ var mydragg = function(){
 
 //   function elementDrag(e) {
 //     console.log('2s elementDrag');
-    
+
 //     e = e || window.event;
 //     // calculate the new cursor position:
 //     pos1 = pos3 - e.clientX;
@@ -129,4 +138,3 @@ var mydragg = function(){
 //     document.onmousemove = null;
 //   }
 // }
-
