@@ -25,8 +25,44 @@ var imgs = [{
         url: "img/memes/4.jpg",
         keywords: ["crazy", "girl", "smile"]
     }, {
-        id: "5",
-        url: "img/memes/5.jpg",
+        id: "6",
+        url: "img/memes/6.jpg",
+        keywords: ["baby", "success", "victory"]
+    }, {
+        id: "7",
+        url: "img/memes/7.jpg",
+        keywords: ["baby", "success", "victory"]
+    }, {
+        id: "8",
+        url: "img/memes/8.jpg",
+        keywords: ["baby", "success", "victory"]
+    }, {
+        id: "9",
+        url: "img/memes/9.jpg",
+        keywords: ["baby", "success", "victory"]
+    }, {
+        id: "10",
+        url: "img/memes/10.jpg",
+        keywords: ["baby", "success", "victory"]
+    }, {
+        id: "11",
+        url: "img/memes/11.jpg",
+        keywords: ["baby", "success", "victory"]
+    }, {
+        id: "12",
+        url: "img/memes/12.jpg",
+        keywords: ["baby", "success", "victory"]
+    }, {
+        id: "13",
+        url: "img/memes/13.jpg",
+        keywords: ["baby", "success", "victory"]
+    }, {
+        id: "14",
+        url: "img/memes/14.jpg",
+        keywords: ["baby", "success", "victory"]
+    }, {
+        id: "15",
+        url: "img/memes/15.jpg",
         keywords: ["baby", "success", "victory"]
     }
 ];

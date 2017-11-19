@@ -61,7 +61,7 @@
                 <button class="button" onclick="goToKeyWords()">keywords</button>
 
             </div>
-            <input type="text" class="search-box display-none" onkeydown="renderSearch(value,imgs)">
+            <input type="text" placeholder="&#x1F50D search images" class="search-box display-none" onkeydown="renderSearch(value,imgs)">
             <div class="imgs">
 
             </div>
@@ -75,7 +75,7 @@
     <div class="aboutContainer display-none">
         <section class="about">
 
-            <div class="hexagon">
+            <div class="hexagon1">
 
                 <div class="hexTop"></div>
                 <div class="hexBottom"></div>
@@ -83,15 +83,33 @@
 
             <!-- <img src="img/profilepic.jpg" class ="profile-image">  -->
             <div class="text-area">
-                <div class="header">
-                    <h1 class="about-name">Ofir Mossinson</h1>
-                    <h2 class="about-experties">Illustrator & Character Designer</h2>
-                </div>
+
+                <h1 class="about-name">Ofir Mossinson</h1>
+                <h2 class="about-experties">Illustrator & Character Designer</h2>
+
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nibh at sagittis tristique,enim
                     magna pretium augue, eget consectetur sem dui non urna. Integer gravida, diam congue molestie fringilla,
                     elit odio rhoncus turpis, ac dictum libero elit vel metus. Morbi egestas sit amet velit eget venenatis.
                     Mauris porttitor,nibh at sagittis tristique, enim magna pretium augue, eget consectetur sem dui non urna</p>
             </div>
+
+            <div class="hexagon2">
+                    
+                                    <div class="hexTop"></div>
+                                    <div class="hexBottom"></div>
+                                </div>
+                    
+                                <!-- <img src="img/profilepic.jpg" class ="profile-image">  -->
+                                <div class="text-area">
+                    
+                                    <h1 class="about-name">Ofir Mossinson</h1>
+                                    <h2 class="about-experties">Illustrator & Character Designer</h2>
+                    
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nibh at sagittis tristique,enim
+                                        magna pretium augue, eget consectetur sem dui non urna. Integer gravida, diam congue molestie fringilla,
+                                        elit odio rhoncus turpis, ac dictum libero elit vel metus. Morbi egestas sit amet velit eget venenatis.
+                                        Mauris porttitor,nibh at sagittis tristique, enim magna pretium augue, eget consectetur sem dui non urna</p>
+                                </div>
         </section>
     </div>
 
@@ -105,7 +123,7 @@
             <input type="text" placeholder="Name (Required)">
             <input type="text" placeholder="Email (Required)">
             <input type="text" placeholder="Subject">
-            <textarea  placeholder="Write your message here..."></textarea>
+            <textarea placeholder="Write your message here..."></textarea>
 
             <button>send</button>
 
@@ -117,11 +135,11 @@
 
             <div>
                 <p>
-                    <i class="fa fa-map-marker" aria-hidden="true"></i> Elm St. 14/05 Lost City </p>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> &nbsp Elm St. 14/05 Lost City </p>
                 <p>
-                    <i class="fa fa-phone" aria-hidden="true"></i> + 3528 331 86 35</p>
+                    <i class="fa fa-phone" aria-hidden="true"></i> &nbsp + 3528 331 86 35</p>
                 <p>
-                    <i class="fa fa-envelope" aria-hidden="true"></i> info@hexalcorp.com</p>
+                    <i class="fa fa-envelope" aria-hidden="true"></i> &nbsp info@hexalcorp.com</p>
             </div>
 
 
@@ -135,21 +153,31 @@
         <section class="memeMaker" style="position:relative">
 
             <ul>
-                <li class="addtxt" onclick="addtxt()"><i class="fa fa-plus-circle" aria-hidden="true"></i></li>
-                <li> <i class="fa fa-tint" aria-hidden="true"></i></li>
-                <li>  <i class="fa fa-text-width" aria-hidden="true" onclick="initiateFontSize()"></i> <input type="text" class="font-size"> </li>
+                <li class="addtxt" onclick="addtxt()">
+                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                </li>
+                <li>
+                    <i class="fa fa-tint" aria-hidden="true"></i>
+                </li>
+                <li>
+                    <i class="fa fa-text-width" aria-hidden="true" onclick="initiateFontSize()"></i>
+                    <input type="text" class="font-size"> </li>
             </ul>
-           
+
 
             <div class="memeContainer">
                 <canvas id="canvas">
-                    
+
                 </canvas>
             </div>
 
-            
-            <button class="download" ><a href="#" id="download" onclick="downloadImg(this)"><i class="fa fa-download" aria-hidden="true"></i></a></button>
-            
+
+            <button class="download">
+                <a href="#" id="download" onclick="downloadImg(this)">
+                    <i class="fa fa-download" aria-hidden="true"></i>
+                </a>
+            </button>
+
 
         </section>
     </div>
