@@ -98,7 +98,6 @@ align-self: center;
     position: relative;
 }
 
-<<<<<<< HEAD
 .download{
     background: #323232;
     width: 70px;
@@ -108,8 +107,6 @@ align-self: center;
     font-size: 18px;
     color: #2eb398;
     border-radius: 5px;
-=======
 .memeMakerContainer ul input{
     width:30px;
->>>>>>> e7479938d451656c3788bddae058fba106d258e5
 }
