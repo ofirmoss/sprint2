@@ -2,7 +2,6 @@
 
 var txtCount = 1;
 
-var gCurrImg;
 
 window.onload = function () {
     renderCanvasImg();
@@ -92,6 +91,12 @@ var mydragg = function () {
 }();
 
 
+function downloadImg(elLink) {
+    var canvas = document.querySelector('canvas');
+    elLink.href = canvas.toDataURL();
+    elLink.download = 'perfectMeme.jpg';
+}
+
 var currSize = 15;
 
 function initiateFontSize() {
@@ -111,16 +116,48 @@ function changeFontSize(nodeList, wantedFontSize) {
     }
 }
 
-function saveCurrImg(id){
-    gCurrImg = id;
+
+function getCoords(childId, parentId) {
+    var parentPos = document.querySelector('#' + parentId).getBoundingClientRect(),
+        childrenPos = document.querySelector('#' + childId).getBoundingClientRect(),
+        relativePos = {};
+
+    relativePos.top = childrenPos.top - parentPos.top,
+        relativePos.right = childrenPos.right - parentPos.right,
+        relativePos.bottom = childrenPos.bottom - parentPos.bottom,
+        relativePos.left = childrenPos.left - parentPos.left;
+    return relativePos;
 }
 
-function downloadImg(elLink) {
-    var canvas = document.querySelector('canvas');
-    elLink.href = canvas.toDataURL();
-    elLink.download = `img/${gCurrImg}.jpg`;
+var coords = getCoords('canvas','canvas')
+txt
+var gCanvas = [
+                {
+                    text: 'blablabla',
+                    fontColor: 'red',
+                    fontsize: '20px',
+                    xcoord: 40,
+                    ycoord: 40,
+                    display: true
+            }
+            ]
+
+
+
+
+function renderText(gCanvas) {
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.font = gCanvas.fontSize + ' ' + gCanvas.fontSize;
+    ctx.fillStyle = gCanvas.fontColor;
+    ctx.strokeText(gCanvas.text, gCanvas.xcoord, gCanvas.ycoord);
+
+    
 }
 
+function createT(){
+
+}
 
 
 // // dragElement(document.querySelector(".mydiv"));
@@ -165,35 +202,3 @@ function downloadImg(elLink) {
 //   }
 // }
 // getCoords('txt1','canvas')
-
-function getCoords(childId, parentId) {
-    var parentPos = document.querySelector('#' + parentId).getBoundingClientRect(),
-        childrenPos = document.querySelector('#' + childId).getBoundingClientRect(),
-        relativePos = {};
-
-    relativePos.top = childrenPos.top - parentPos.top,
-        relativePos.right = childrenPos.right - parentPos.right,
-        relativePos.bottom = childrenPos.bottom - parentPos.bottom,
-        relativePos.left = childrenPos.left - parentPos.left;
-    return relativePos;
-}
-
-
-
-var gCanvas = {
-    fontColor: 'red',
-    fontsize: '20px',
-    xcoord: 40,
-    ycoord: 40,
-    text: 'blablabla'
-}
-
-
-function renderText(gCanvas) {
-    var canvas = document.getElementById("canvas");
-    var ctx = canvas.getContext("2d");
-    ctx.font = gCanvas.fontSize + ' ' + gCanvas.fontSize;
-    ctx.fillStyle = gCanvas.fontColor;
-    ctx.strokeText(gCanvas.text, gCanvas.xcoord, gCanvas.ycoord);
-    
-}
