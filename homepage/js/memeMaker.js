@@ -130,8 +130,7 @@ function getCoords(childId, parentId) {
 }
 
 var coords = getCoords('canvas','canvas')
-txt
-var gCanvas = [
+var gCanvasTxts = [
                 {
                     text: 'blablabla',
                     fontColor: 'red',
@@ -145,12 +144,13 @@ var gCanvas = [
 
 
 
-function renderText(gCanvas) {
+function renderText(canvasTxt) {
+    if(!canvasTxt.display) return;
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    ctx.font = gCanvas.fontSize + ' ' + gCanvas.fontSize;
-    ctx.fillStyle = gCanvas.fontColor;
-    ctx.strokeText(gCanvas.text, gCanvas.xcoord, gCanvas.ycoord);
+    ctx.font = canvasTxt.fontSize + ' ' + canvasTxt.fontSize;
+    ctx.fillStyle = canvasTxt.fontColor;
+    ctx.strokeText(canvasTxt.text, canvasTxt.xcoord, canvasTxt.ycoord);
 
     
 }
