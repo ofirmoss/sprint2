@@ -7,3 +7,4 @@ function changePage(newPage) {
     document.querySelector(`.${prevPage}`).classList.toggle('hider'); 
     prevPage = newPage;   
 }
+

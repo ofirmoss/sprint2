@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/homepage.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
 
     <title>Meme Creator</title>
 </head>
@@ -25,7 +25,7 @@
 
                 <!-- <img class="bglogo" src="img/pointy-thingy.png" alt=""> -->
                 <ul class="nav">
-                    <li >blog</li>
+                    <li>blog</li>
                     <li class="dot">·</li>
                     <li onclick="goToContact()">get in touch</li>
                 </ul>
@@ -59,15 +59,15 @@
                 <button class="button" onclick="toggleSearch()">search</button>
                 ·
                 <button class="button" onclick="goToKeyWords()">keywords</button>
-                
+
             </div>
-            <input type="text" class = "search-box display-none" onkeydown="renderSearch(value, imgs)" >
+            <input type="text" class="search-box display-none" onkeydown="renderSearch(value, imgs)">
             <div class="imgs">
 
             </div>
 
             <div class="keywords display-none" onclick="">
-                </div>
+            </div>
 
 
         </section>
@@ -75,26 +75,23 @@
     <div class="aboutContainer display-none">
         <section class="about">
 
-                <div class="hexagon">
+            <div class="hexagon">
 
-                        <div class="hexTop"></div>
-                        <div class="hexBottom"></div>
-                      </div>
-                      
-                <!-- <img src="img/profilepic.jpg" class ="profile-image">  -->
+                <div class="hexTop"></div>
+                <div class="hexBottom"></div>
+            </div>
+
+            <!-- <img src="img/profilepic.jpg" class ="profile-image">  -->
             <div class="text-area">
-            <div class="header">
-            <h1 class = "about-name">Smith Anderson</h1>
-            <h2 class="about-experties">Illustrator & Character Designer</h2>
-        </div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor,
-             nibh at sagittis tristique,enim magna pretium augue, eget consectetur sem dui non urna.
-              Integer gravida, diam congue molestie
-              fringilla, elit odio rhoncus turpis, ac dictum libero elit vel metus.
-               Morbi egestas sit amet velit
-               eget venenatis. Mauris porttitor,nibh at sagittis tristique,
-                enim magna pretium augue, eget consectetur sem dui non urna</p>
-            </div>         
+                <div class="header">
+                    <h1 class="about-name">Smith Anderson</h1>
+                    <h2 class="about-experties">Illustrator & Character Designer</h2>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris porttitor, nibh at sagittis tristique,enim
+                    magna pretium augue, eget consectetur sem dui non urna. Integer gravida, diam congue molestie fringilla,
+                    elit odio rhoncus turpis, ac dictum libero elit vel metus. Morbi egestas sit amet velit eget venenatis.
+                    Mauris porttitor,nibh at sagittis tristique, enim magna pretium augue, eget consectetur sem dui non urna</p>
+            </div>
         </section>
     </div>
 
@@ -112,24 +109,51 @@
 
             <button>send</button>
 
-            <p><span>Quisque Hendrerit: </span> purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae. 
+            <p>
+                <span>Quisque Hendrerit: </span> purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin
+                sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae.
 
             </p>
 
             <div>
-                <p><i class="fa fa-map-marker" aria-hidden="true"></i> Elm St. 14/05 Lost City </p>
-                <p><i class="fa fa-phone" aria-hidden="true"></i> + 3528 331 86 35</p>
-                <p><i class="fa fa-envelope" aria-hidden="true"></i> info@hexalcorp.com</p>
+                <p>
+                    <i class="fa fa-map-marker" aria-hidden="true"></i> Elm St. 14/05 Lost City </p>
+                <p>
+                    <i class="fa fa-phone" aria-hidden="true"></i> + 3528 331 86 35</p>
+                <p>
+                    <i class="fa fa-envelope" aria-hidden="true"></i> info@hexalcorp.com</p>
             </div>
-            
-            
-            
-            
+
+
+
+
         </section>
 
     </div>
+
+    <div class="memeMakerContainer">
+        <section class="memeMaker" style="position:relative">
+
+            <ul>
+                <li class="addtxt" onclick="addtxt()"><i class="fa fa-plus-circle" aria-hidden="true"></i></li>
+                <li> <i class="fa fa-tint" aria-hidden="true"></i></li>
+                <li>  <i class="fa fa-text-width" aria-hidden="true"></i>    </li>
+            </ul>
+           
+
+            <div class="memeContainer">
+                <canvas>
+                    <img class="memeImg" src="img/memes/5.jpg">
+                </canvas>
+            </div>
+
+
+        </section>
+    </div>
+
     <section class="copyrights">© Copyright 2013 by PSDchat</section>
 
+    <script src="js/memeMaker.js"></script>
     <script src="js/menues.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/displayManager.js"></script>
