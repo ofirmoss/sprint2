@@ -61,6 +61,7 @@
     /* background: pink; */
     height: 300px;
     align-items: center;
+    cursor: pointer; 
     /* display: none;  */
 }
 .imgs img{

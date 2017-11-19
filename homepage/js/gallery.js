@@ -41,7 +41,7 @@ function renderImgs(imgs) {
     var strHtml = '';
 
     imgs.forEach(function (img) {
-        strHtml += `<img onclick= "createMeme(${img.id}) ; goToMemeMaker()" src="${img.url}">`
+        strHtml += `<img onclick= "createMeme(${img.id}) ; goToMemeMaker() ; saveCurrImg(${img.id})" src="${img.url}">`
     });
 
     var gallery = document.querySelector('.imgs');
@@ -135,7 +135,7 @@ function listenToSearch() {
 
 }
  
- window.onload = init();
+ window.onload =  init();
 
 
 

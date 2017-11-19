@@ -2,6 +2,7 @@
 
 var txtCount = 1;
 
+var gCurrImg;
 
 window.onload = function () {
     renderCanvasImg();
@@ -89,12 +90,6 @@ var mydragg = function () {
 }();
 
 
-function downloadImg(elLink) {
-    var canvas = document.querySelector('canvas');
-    elLink.href = canvas.toDataURL();
-    elLink.download = 'perfectMeme.jpg';
-}
-
 var currSize = 15;
 
 function initiateFontSize(){
@@ -114,7 +109,15 @@ for (let i = 0; i < nodeList.length; i++) {
 }
 }
 
+function saveCurrImg(id){
+    gCurrImg = id;
+}
 
+function downloadImg(elLink) {
+    var canvas = document.querySelector('canvas');
+    elLink.href = canvas.toDataURL();
+    elLink.download = `img/${gCurrImg}.jpg`;
+}
 
 
 
