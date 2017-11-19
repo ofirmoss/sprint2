@@ -104,10 +104,6 @@ function checkreapets(imgs) {
 function filterTags(tagInput, imgs) {
     var tags = tagInput.split(' ');
     var filtered = imgs.slice();
-<<<<<<< HEAD
-
-=======
->>>>>>> 0785e69c3525c68ca9676fd877b57ca9cbbb1aa0
     for (let i = 0; i < tags.length; i++) {
         var tag = tags[i];
 
