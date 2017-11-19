@@ -61,12 +61,12 @@
                 <button class="button" onclick="goToKeyWords()">keywords</button>
                 
             </div>
-            <input type="text" class = "search-box display-none" onchange="renderSearch(value, imgs)" >
+            <input type="text" class = "search-box display-none" onkeydown="renderSearch(value, imgs)" >
             <div class="imgs">
 
             </div>
 
-            <div class="keywords" onclick="goToContact()">
+            <div class="keywords display-none" onclick="">
                 </div>
 
 
@@ -76,6 +76,7 @@
         <section class="about">
 
                 <div class="hexagon">
+
                         <div class="hexTop"></div>
                         <div class="hexBottom"></div>
                       </div>

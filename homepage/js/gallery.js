@@ -71,23 +71,23 @@ function renderKeyWords(imgs) {
 
 
 function checkreapets(imgs) {
-    var repeatscount = [{ txt: imgs[0].keywords[0], repeats: 1 }];
+    var repeatscount = [{ txt: imgs[0].keywords[0], repeats: 1}];
     var counter = 1;
 
     for (var i = 0; i < imgs.length; i++) {
         for (var j = 0; j < imgs[i].keywords.length; j++) {
             var currWord = imgs[i].keywords[j];
-            repeatscount.forEach(function (count) {
-                if (count.txt === currWord) counter++;
+            repeatscount.forEach(function (keyword) {
+                if (keyword.txt === currWord) counter++;
             })
             if (counter === 1) {
                 repeatscount.push({
                     txt: currWord,
                     repeats: counter
                 });
-            } repeatscount.forEach(function (count) {
-                if (count.txt === currWord) {
-                    count.repeats = counter;
+            } repeatscount.forEach(function (keyword) {
+                if (keyword.txt === currWord) {
+                    keyword.repeats = counter;
                 }
             });
             counter = 1;
@@ -104,7 +104,7 @@ function checkreapets(imgs) {
 function filterTags(tagInput, imgs) {
     console.log(tagInput);
     var tags = tagInput.split(' ');
-    var filtered = imgs;
+    var filtered = imgs.slice();
     for (let i = 0; i < tags.length; i++) {
         var tag = tags[i];
 
