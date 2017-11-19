@@ -23,12 +23,12 @@ function addtxt() {
     </div>  
 `
 
-renderCanvasImg();
-var id = '#txt' + txtCount;
-document.querySelector(id + ' input').style.fontSize = currSize +'px';
-console.log(currSize);
-txtCount++;
-// var txt = document.querySelector('');
+    renderCanvasImg();
+    var id = '#txt' + txtCount;
+    document.querySelector(id + ' input').style.fontSize = currSize + 'px';
+    console.log(currSize);
+    txtCount++;
+    // var txt = document.querySelector('');
 }
 
 function removeTxt(txtIdx) {
@@ -71,10 +71,12 @@ var mydragg = function () {
                     posY = evt.clientY,
                     aX = posX - diffX,
                     aY = posY - diffY;
+                // console.log('x coordinate:',aX);
+                // console.log('y coordinate:',aY);
                 if (aX < 0) aX = 0;
                 if (aY < 0) aY = 0;
-                if (aX > 150) aX = 150;
-                if (aY > 150) aY = 150;
+                // if (aX > 80) aX = 80;
+                // if (aY > 150) aY = 150;
                 if (aX + eWi > cWi) aX = cWi - eWi;
                 if (aY + eHe > cHe) aY = cHe - eHe;
                 mydragg.move(divid, aX, aY);
@@ -83,7 +85,7 @@ var mydragg = function () {
         stopMoving: function (container) {
             var a = document.createElement('script');
             document.querySelector('.memeContainer').style.cursor = 'default';
-            document.onmousemove = function () {}
+            document.onmousemove = function () { }
         },
     }
 }();
@@ -97,21 +99,21 @@ function downloadImg(elLink) {
 
 var currSize = 15;
 
-function initiateFontSize(){
+function initiateFontSize() {
     currSize = document.querySelector('.font-size').value;
     console.log(currSize);
     var textDivs = document.querySelectorAll('.memeContainer input');
-    changeFontSize(textDivs,currSize);
+    changeFontSize(textDivs, currSize);
 }
 
 
 
-function changeFontSize(nodeList,wantedFontSize){
-for (let i = 0; i < nodeList.length; i++) {
-    nodeList[i].style.fontSize = wantedFontSize + 'px';    
+function changeFontSize(nodeList, wantedFontSize) {
+    for (let i = 0; i < nodeList.length; i++) {
+        nodeList[i].style.fontSize = wantedFontSize + 'px';
 
-    
-}
+
+    }
 }
 
 
@@ -159,3 +161,36 @@ for (let i = 0; i < nodeList.length; i++) {
 //     document.onmousemove = null;
 //   }
 // }
+// getCoords('txt1','canvas')
+
+function getCoords(childId, parentId) {
+    var parentPos = document.querySelector('#' + parentId).getBoundingClientRect(),
+        childrenPos = document.querySelector('#' + childId).getBoundingClientRect(),
+        relativePos = {};
+
+    relativePos.top = childrenPos.top - parentPos.top,
+        relativePos.right = childrenPos.right - parentPos.right,
+        relativePos.bottom = childrenPos.bottom - parentPos.bottom,
+        relativePos.left = childrenPos.left - parentPos.left;
+    return relativePos;
+}
+
+
+
+var gCanvas = {
+    fontColor: 'red',
+    fontsize: '20px',
+    xcoord: 40,
+    ycoord: 40,
+    text: 'blablabla'
+}
+
+
+function renderText(gCanvas) {
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.font = gCanvas.fontSize + ' ' + gCanvas.fontSize;
+    ctx.fillStyle = gCanvas.fontColor;
+    ctx.strokeText(gCanvas.text, gCanvas.xcoord, gCanvas.ycoord);
+    
+}
