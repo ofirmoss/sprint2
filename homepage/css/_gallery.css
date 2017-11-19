@@ -5,8 +5,8 @@
     align-self: center;
     /* display: none; */
     padding: 20px 0;
-    align-items: center;
-    display: flex;
+    /* align-items: center; */
+    /* display: flex; */
 }
 
 .gallery{

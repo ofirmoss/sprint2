@@ -40,7 +40,7 @@ function renderImgs(imgs) {
     var strHtml = '';
 
     imgs.forEach(function (img) {
-        strHtml += `<img onclick= 'createMeme(${img.id})' src='${img.url}'>`
+        strHtml += `<img onclick= 'createMeme(${img.id}) goToMemeMaker()' src='${img.url}'>`
     });
 
     var gallery = document.querySelector('.imgs');
@@ -85,7 +85,8 @@ function checkreapets(imgs) {
                     txt: currWord,
                     repeats: counter
                 });
-            } repeatscount.forEach(function (keyword) {
+            } 
+            repeatscount.forEach(function (keyword) {
                 if (keyword.txt === currWord) {
                     keyword.repeats = counter;
                 }
@@ -177,7 +178,7 @@ function listenToSearch(){
 //         searchListening = !searchListening;
 //     }
     
-}
+
     // function toggleEventListener()
 
         // function renderHexaImgs(imgs) {
