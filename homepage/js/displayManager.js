@@ -2,6 +2,8 @@ function toggleSearch(){
     document.querySelector('.search-box').classList.remove('display-none');
     document.querySelector('.imgs').classList.remove('display-none');
     document.querySelector('.keywords').classList.add('display-none');
+    document.querySelector('.memeMakerContainer').classList.add('display-none');
+    
     }
     
     function goToProtfolio(){
@@ -12,6 +14,8 @@ function toggleSearch(){
         document.querySelector('.contactContainer').classList.add('display-none');
         document.querySelector('.keywords').classList.add('display-none');
         document.querySelector('.search-box').classList.add('display-none');
+        document.querySelector('.memeMakerContainer').classList.add('display-none');
+        
         renderImgs(imgs);
     }
     
@@ -34,4 +38,13 @@ function toggleSearch(){
         document.querySelector('.keywords').classList.remove('display-none');
         document.querySelector('.search-box').classList.add('display-none');
         document.querySelector('.imgs').classList.add('display-none');
+        document.querySelector('.memeMakerContainer').classList.add('display-none');
+        
+    }
+
+    function goToMemeMaker(){
+        document.querySelector('.keywords').classList.add('display-none');
+        document.querySelector('.search-box').classList.add('display-none');
+        document.querySelector('.imgs').classList.add('display-none');
+        document.querySelector('.memeMakerContainer').classList.remove('display-none');
     }

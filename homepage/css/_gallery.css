@@ -3,10 +3,10 @@
     height: 736px;
     background: white;
     align-self: center;
-    display: none;
+    /* display: none; */
     padding: 20px 0;
     align-items: center;
-    /* display: flex; */
+    display: flex;
 }
 
 .gallery{
