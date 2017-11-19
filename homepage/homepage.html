@@ -11,7 +11,7 @@
     <title>Meme Creator</title>
 </head>
 
-<body>
+<body onload="init()">
     <header>
         <div class="navContainer">
             <nav>
@@ -61,7 +61,7 @@
                 <button class="button" onclick="goToKeyWords()">keywords</button>
 
             </div>
-            <input type="text" class="search-box display-none" onkeydown="renderSearch(value, imgs)">
+            <input type="text" class="search-box display-none" onkeydown="renderSearch(value,imgs)">
             <div class="imgs">
 
             </div>
@@ -137,13 +137,13 @@
             <ul>
                 <li class="addtxt" onclick="addtxt()"><i class="fa fa-plus-circle" aria-hidden="true"></i></li>
                 <li> <i class="fa fa-tint" aria-hidden="true"></i></li>
-                <li>  <i class="fa fa-text-width" aria-hidden="true" onclick="initiateFontSize()"></i> <input type="text" class="font-size">    </li>
+                <li>  <i class="fa fa-text-width" aria-hidden="true" onclick="initiateFontSize()"></i> <input type="text" class="font-size"> </li>
             </ul>
            
 
             <div class="memeContainer">
                 <canvas>
-                    <img class="memeImg" src="img/memes/4.jpg">
+                    
                 </canvas>
             </div>
 
@@ -154,10 +154,10 @@
 
     <section class="copyrights">© Copyright 2013 by PSDchat</section>
 
-    <script src="js/memeMaker.js"></script>
-    <script src="js/menues.js"></script>
-    <script src="js/displayManager.js"></script>
-    <script src="js/gallery.js"></script>
+    <script type="text/javascript" src="js/memeMaker.js"></script>
+    <script type="text/javascript" src="js/menues.js"></script>
+    <script type="text/javascript" src="js/displayManager.js"></script>
+    <script type="text/javascript" src="js/gallery.js"></script>
 </body>
 
 </html>
