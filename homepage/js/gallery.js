@@ -1,38 +1,39 @@
 'use strict'
 
 var imgs = [{
-    id: "0",
-    url: "img/memes/0.jpg",
-    keywords: ["burning", "smile", "child"]
-},
-{
-    id: "1",
-    url: "img/memes/1.jpg",
-    keywords: ["crying", "jorden", "sad"]
-},
-{
-    id: "2",
-    url: "img/memes/2.jpg",
-    keywords: ["cartoon", "blame", "not"]
-},
-{
-    id: "3",
-    url: "img/memes/3.jpg",
-    keywords: ["one", "man", "simply"]
-},
-{
-    id: "4",
-    url: "img/memes/4.jpg",
-    keywords: ["crazy", "girl", "smile"]
-}, {
-    id: "5",
-    url: "img/memes/5.jpg",
-    keywords: ["baby", "success", "victory"]
-}
+        id: "0",
+        url: "img/memes/0.jpg",
+        keywords: ["burning", "smile", "child"]
+    },
+    {
+        id: "1",
+        url: "img/memes/1.jpg",
+        keywords: ["crying", "jorden", "sad"]
+    },
+    {
+        id: "2",
+        url: "img/memes/2.jpg",
+        keywords: ["cartoon", "blame", "not"]
+    },
+    {
+        id: "3",
+        url: "img/memes/3.jpg",
+        keywords: ["one", "man", "simply"]
+    },
+    {
+        id: "4",
+        url: "img/memes/4.jpg",
+        keywords: ["crazy", "girl", "smile"]
+    }, {
+        id: "5",
+        url: "img/memes/5.jpg",
+        keywords: ["baby", "success", "victory"]
+    }
 ];
 
 function init() {
     renderImgs(imgs);
+    console.log('load')
     renderKeyWords(imgs);
 }
 
@@ -40,7 +41,7 @@ function renderImgs(imgs) {
     var strHtml = '';
 
     imgs.forEach(function (img) {
-        strHtml += `<img onclick= 'createMeme(${img.id}) goToMemeMaker()' src='${img.url}'>`
+        strHtml += `<img onclick= "createMeme(${img.id}) ; goToMemeMaker()" src="${img.url}">`
     });
 
     var gallery = document.querySelector('.imgs');
@@ -71,7 +72,10 @@ function renderKeyWords(imgs) {
 
 
 function checkreapets(imgs) {
-    var repeatscount = [{ txt: imgs[0].keywords[0], repeats: 1}];
+    var repeatscount = [{
+        txt: imgs[0].keywords[0],
+        repeats: 1
+    }];
     var counter = 1;
 
     for (var i = 0; i < imgs.length; i++) {
@@ -85,7 +89,7 @@ function checkreapets(imgs) {
                     txt: currWord,
                     repeats: counter
                 });
-            } 
+            }
             repeatscount.forEach(function (keyword) {
                 if (keyword.txt === currWord) {
                     keyword.repeats = counter;
@@ -116,20 +120,22 @@ function filterTags(tagInput, imgs) {
     return filtered;
 }
 
-function renderSearch(tagInput){
-    var filtered = filterTags(tagInput,imgs);
+function renderSearch(tagInput) {
+    var filtered = filterTags(tagInput, imgs);
     renderImgs(filtered);
 }
 
 
-function listenToSearch(){
-    
-                if (event.keyCode === 13){
-                    var userInput = document.querySelector('.search-box').value
-                    renderSearch(userInput);
-                };
+function listenToSearch() {
 
-            }
+    if (event.keyCode === 13) {
+        var userInput = document.querySelector('.search-box').value
+        renderSearch(userInput);
+    };
+
+}
+ 
+ window.onload = init();
 
 
 
@@ -177,36 +183,35 @@ function listenToSearch(){
 //         document.removeEventListener("keydown",listenToSearch,true);
 //         searchListening = !searchListening;
 //     }
-    
-
-    // function toggleEventListener()
-
-        // function renderHexaImgs(imgs) {
-        //     var strHtml = '';
-
-        //     imgs.forEach(function (img, idx) {
-        //         strHtml +=         ` <div class="hexagon>
-        //         <div class="hexTop"></div>
-        //         <div class="hexBottom"></div>
-        //       </div>
-
-        //      `
-        //     });
-        // console.log(strHtml);
-        //     var gallery = document.querySelector('.imgs');
-        //     gallery.innerHTML = strHtml;
-        // }
 
 
+// function toggleEventListener()
 
-        // function renderImgs(imgs) {
-        //     var strHtml = '';
-        
-        //     imgs.forEach(function (img, idx) {
-        //         strHtml += `<img src="img/memes/${idx}.jpg" >`
-        //     });
-        
-        //     var gallery = document.querySelector('.imgs');
-        //     gallery.innerHTML = strHtml;
-        // }
-        
+// function renderHexaImgs(imgs) {
+//     var strHtml = '';
+
+//     imgs.forEach(function (img, idx) {
+//         strHtml +=         ` <div class="hexagon>
+//         <div class="hexTop"></div>
+//         <div class="hexBottom"></div>
+//       </div>
+
+//      `
+//     });
+// console.log(strHtml);
+//     var gallery = document.querySelector('.imgs');
+//     gallery.innerHTML = strHtml;
+// }
+
+
+
+// function renderImgs(imgs) {
+//     var strHtml = '';
+
+//     imgs.forEach(function (img, idx) {
+//         strHtml += `<img src="img/memes/${idx}.jpg" >`
+//     });
+
+//     var gallery = document.querySelector('.imgs');
+//     gallery.innerHTML = strHtml;
+// }
