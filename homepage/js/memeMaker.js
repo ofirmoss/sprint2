@@ -21,10 +21,20 @@ function addtxt() {
     <i onclick=removeTxt(${txtCount}) class="fa fa-trash" aria-hidden="true"></i>    
     </div>  
 `
+<<<<<<< HEAD
     txtCount++;
     renderCanvasImg();
 
     // var txt = document.querySelector('');
+=======
+
+renderCanvasImg();
+var id = '#txt' + txtCount;
+document.querySelector(id + ' input').style.fontSize = currSize +'px';
+console.log(currSize);
+txtCount++;
+// var txt = document.querySelector('');
+>>>>>>> e7479938d451656c3788bddae058fba106d258e5
 }
 
 function removeTxt(txtIdx) {
@@ -84,14 +94,33 @@ var mydragg = function () {
     }
 }();
 
+<<<<<<< HEAD
 function downloadImg(elLink) {
     var canvas = document.querySelector('canvas');
     elLink.href = canvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
 }
+=======
+
+var currSize = 15;
+
+function initiateFontSize(){
+    currSize = document.querySelector('.font-size').value;
+    console.log(currSize);
+    var textDivs = document.querySelectorAll('.memeContainer input');
+    changeFontSize(textDivs,currSize);
+}
+
+>>>>>>> e7479938d451656c3788bddae058fba106d258e5
 
 
+function changeFontSize(nodeList,wantedFontSize){
+for (let i = 0; i < nodeList.length; i++) {
+    nodeList[i].style.fontSize = wantedFontSize + 'px';    
 
+    
+}
+}
 
 
 

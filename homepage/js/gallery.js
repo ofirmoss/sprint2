@@ -102,7 +102,6 @@ function checkreapets(imgs) {
 
 
 function filterTags(tagInput, imgs) {
-    console.log(tagInput);
     var tags = tagInput.split(' ');
     var filtered = imgs.slice();
     for (let i = 0; i < tags.length; i++) {
@@ -122,9 +121,64 @@ function renderSearch(tagInput){
 }
 
 
+function listenToSearch(){
+    
+                if (event.keyCode === 13){
+                    var userInput = document.querySelector('.search-box').value
+                    renderSearch(userInput);
+                };
+
+            }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// var searchListening = false;
+
+// function toggleEventListener() {
+//     console.log(searchListening);
+//     if(!searchListening){
+//         document.addEventListener("keydown",listenToSearch,true)
+//         searchListening = !searchListening;
+//     }else{
+//         document.removeEventListener("keydown",listenToSearch,true);
+//         searchListening = !searchListening;
+//     }
+    
+}
+    // function toggleEventListener()
 
         // function renderHexaImgs(imgs) {
         //     var strHtml = '';
