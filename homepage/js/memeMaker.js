@@ -4,6 +4,8 @@ var txtCount = 1;
 
 var gCurrImg;
 
+var gCanvas = [];
+
 window.onload = function () {
     renderCanvasImg();
 };
@@ -23,6 +25,14 @@ function addtxt() {
     <i onclick=removeTxt(${txtCount}) class="fa fa-trash" aria-hidden="true"></i>    
     </div>  
 `
+gCanvas.push({
+    text: '',
+    fontColor: 'white',
+    fontsize: '20px',
+    xcoord: 0,
+    ycoord: 8,
+    display: true
+})
 
     renderCanvasImg();
     var id = '#txt' + txtCount;
@@ -112,7 +122,7 @@ function initiateFontSize() {
 function changeFontSize(nodeList, wantedFontSize) {
     for (let i = 0; i < nodeList.length; i++) {
         nodeList[i].style.fontSize = wantedFontSize + 'px';
-
+        gCanvasTxts[i].fontSize = wantedFontSize + 'px';        
 
     }
 }
