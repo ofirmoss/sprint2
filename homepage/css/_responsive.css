@@ -1,24 +1,99 @@
-
 @media (min-width: 700px) {
     .gallery {
         width: 900px;
     }
+
+    .btn-group{
+        display: none;
+    }
+
+    .search-box{
+        align-self: left;
+    }
+
+    .keywords{
+        align-self: left;
+        width: 300px;
+        padding: 50px 0;
+    }
+
     .imgs img {
         width: 170px;
         height: 170px;
     }
-    
-    .display-none{
+    .display-none {
         display: flex;
-        flex-direction: column; 
+        /* flex-direction: column;  */
+    }
+    .about {
+        width: 100%;
+        align-self: center;
+    }
+    .ofir {
+        width: 820px;
+        display: flex;
+        /* flex-flow: row wrap; */
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+    .ori {
+        width: 820px;
+        display: flex;
+        /* flex-flow: row wrap; */
+        justify-content: space-between;
+    }
+    .hexagon1 {
+        margin: 0;
+    }
+    .hexagon2 {
+        margin: 0;
+    }
+    .hex {
+        margin-top: 50px;
+        /* width: 100px; */
+    }
+    .text-area {
+        align-items: left;
+    }
+    .about-experties {
+        align-self: left;
+    }
+    .contact {
+        width: 820px;
+        display: flex;
+        flex-direction: column;
+    }
+    .form {
+        margin-top: 20px;
+        width: 580px;
+        justify-content: space-between;
+        height: 500px;
+    }
+    .contactContent {
+        width: 780;
+        display: flex;
+        justify-content: space-between;
+    }
+   
+    .contact button {
+        align-self: left;
+    }
+    .contactPart2 {
+        width: 180px;
+    }
+    .contactHeader{
+        height: 100px;
+    }
+
+    .hide{
+        display: none;
     }
 }
 
 @media screen and (max-width: 700px) {
-    .display-none{
-        display: none  ;
+    .display-none {
+        display: none;
     }
-
     .aboutContainer {
         max-width: 0px;
         overflow: hidden;
@@ -31,11 +106,10 @@
         max-width: 0px;
         overflow: hidden;
     }
-    .memeMakerContainer{
+    .memeMakerContainer {
         max-width: 0px;
         overflow: hidden;
     }
-
     .animate {
         animation: slide 1s both;
     }
@@ -44,4 +118,13 @@
             max-width: 1000px;
         }
     }
+    /* .hex {
+        margin-top: 50px;
+        align-self: right;
+    } */
+
+    .contact {
+        justify-content: space-between;
+    }
+
 }

@@ -24,7 +24,7 @@ function addtxt() {
     var memeContainer = document.querySelector('.memeContainer');
     memeContainer.innerHTML += `
     
-    <div id="txt${txtCount}" class="mydiv" onmousedown="mydragg.startMoving(this,'container',event)"
+    <div id="txt${txtCount}" class="mydiv" on-tap="mydragg.startMoving(this,'container',event)" onmousedown="mydragg.startMoving(this,'container',event)"
      onmouseup="mydragg.stopMoving('container')">
     <input type="text" onkeyup='updateText(this,${txtCount})'>
     <i onclick=removeTxt(${txtCount}) class="fa fa-trash" aria-hidden="true"></i>    
