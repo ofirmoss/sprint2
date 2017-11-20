@@ -109,7 +109,7 @@ canvas img {
     cursor: pointer;
 }
 
-.memeMakerContainer ul input {
+.fontSizeInput {
     width: 30px;
 }
 
@@ -117,6 +117,9 @@ a{
 color: inherit;
 }
 
-#fontColor{
-    font-size: 22px
+.fontColor{
+width: 20px;
+height: 20px;
+border: none;
+background: transparent;
 }

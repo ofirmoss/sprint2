@@ -115,7 +115,7 @@ function downloadImg(elLink) {
 var currSize = 15;
 
 function initiateFontSize() {
-    currSize = document.querySelector('.font-size').value;
+    currSize = document.querySelector('.fontSizeInput').value;
     console.log(currSize);
     var textDivs = document.querySelectorAll('.memeContainer input');
     changeFontSize(textDivs, currSize);
@@ -127,7 +127,16 @@ function changeFontSize(nodeList, wantedFontSize) {
     for (let i = 0; i < nodeList.length; i++) {
         nodeList[i].style.fontSize = wantedFontSize + 'px';
         gCanvasTxts[i].fontSize = wantedFontSize + 'px';
+    }
+}
 
+function changeFontColor() {
+    var wantedFontColor = document.querySelector('.fontColor').value;    
+    var textDivs = document.querySelectorAll('.memeContainer input');
+
+    for (let i = 0; i < textDivs.length; i++) {
+        textDivs[i].style.color = wantedFontColor;
+        gCanvasTxts[i].fontColor = wantedFontColor;
     }
 }
 

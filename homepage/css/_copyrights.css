@@ -1,5 +1,5 @@
 .copyrights {
-    width: 370px;
+    width: 100%;
     height: 736px;
     align-self: center;
     font-family: Maven-Pro-Regular;
@@ -9,4 +9,11 @@
     padding: 10px 0;
     font-size: 8.65655pt;
     text-align: justify;
+    /* justify-content: center; */
+    display: flex;
+}
+
+.copyrights p{
+    background: #222222;  
+    width: 370px;    
 }

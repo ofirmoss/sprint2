@@ -50,7 +50,7 @@
 
 
 
-    <div class="galleryContainer">
+    <div class="galleryContainer animate">
         <section class="gallery">
 
             <div class="btn-group">
@@ -72,7 +72,7 @@
 
         </section>
     </div>
-    <div class="aboutContainer display-none">
+    <div class="aboutContainer animate display-none">
         <section class="about">
 
             <div class="hexagon1">
@@ -113,7 +113,7 @@
         </section>
     </div>
 
-    <div class="contactContainer display-none">
+    <div class="contactContainer animate display-none">
         <section class="contact">
             <div>
                 <h1>get in touch</h1>
@@ -149,7 +149,7 @@
 
     </div>
 
-    <div class="memeMakerContainer display-none">
+    <div class="memeMakerContainer animate display-none">
         <section class="memeMaker" style="position:relative">
 
             <ul>
@@ -157,11 +157,12 @@
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 </li>
                 <li id="fontColor">
-                    <i class="fa fa-tint" aria-hidden="true"></i>
+                    <input class="fontColor" type="color" value="#f9fcfb" onchange="changeFontColor()"></input>
+                    <!-- <i class="fa fa-tint" aria-hidden="true"></i> -->
                 </li>
                 <li>
                     <i class="fa fa-text-width" aria-hidden="true" onclick="initiateFontSize()"></i>
-                    <input type="text" class="font-size"> </li>
+                    <input class="fontSizeInput" type="text"> </li>
             </ul>
 
 
@@ -182,7 +183,7 @@
         </section>
     </div>
 
-    <section class="copyrights">© Copyright 2013 by PSDchat</section>
+    <section class="copyrights"><p>© Copyright 2013 by PSDchat</p></section>
 
     <script type="text/javascript" src="js/memeMaker.js"></script>
     <script type="text/javascript" src="js/menues.js"></script>

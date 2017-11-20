@@ -51,13 +51,14 @@ nav .bglogo{
 
 .bottom-nav{
     display: flex;
-    width: 370px;
+    width: 100%;
     background: white;
     height: 35px;
+    justify-content: center;
 }
 
 .bottom-nav ul{
-width: 100%;
+width: 370px;
 display: flex;
 justify-content: space-around;
 padding: 0;
