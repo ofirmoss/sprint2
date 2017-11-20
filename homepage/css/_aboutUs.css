@@ -42,11 +42,15 @@
     /* background: blue; */
     font-family: Maven Pro Regular;
     max-width: 350px;
+    font-family: Maven-Pro-Regular;
+    
 }
 .aboutContainer p {
     max-width: 580px;
     text-align: justify;
     margin-bottom: 20px;
+    font-family: Lato-Regular;    
+    
 }
 
 .about-name{
@@ -59,7 +63,10 @@ font-size: 30px;
 font-weight: 400;
 line-height: 4.56px;
 /* align-self: center; */
+font-family: Maven-Pro-Regular;
+
 }
+
 .about-experties{
     width: 249px;
     height: 17px;
@@ -69,6 +76,8 @@ line-height: 4.56px;
     font-weight: 400;
     line-height: 21.56px;
     text-align: center;
+    margin-bottom: 20px;
+    font-family: Maven-Pro-Regular;
     
 }
 .profile-image{
@@ -79,9 +88,8 @@ line-height: 4.56px;
 .text-area{
 display: flex;
 flex-direction: column;
-justify-content: space-around;  
-align-items: space-around;
+justify-content: space-between;
+align-items: center;  
 /* text-align: center;
 align-self: center; */
-align-items: center;
 }

@@ -26,6 +26,8 @@ function toggleSearch(){
         document.querySelector('.aboutContainer').classList.remove('display-none');
         document.querySelector('.galleryContainer').classList.add('display-none');
         document.querySelector('.contactContainer').classList.add('display-none');
+        document.querySelector('.memeMakerContainer').classList.add('display-none');
+        
         document.querySelector('.bottom-nav').classList.add('display-none');
         document.querySelector('.keywords').classList.add('display-none');
     }
@@ -34,6 +36,8 @@ function toggleSearch(){
         document.querySelector('.contactContainer').classList.remove('display-none');
         document.querySelector('.galleryContainer').classList.add('display-none');
         document.querySelector('.aboutContainer').classList.add('display-none');
+        document.querySelector('.memeMakerContainer').classList.add('display-none');
+        
         document.querySelector('.bottom-nav').classList.add('display-none');
         document.querySelector('.keywords').classList.add('display-none');
     }

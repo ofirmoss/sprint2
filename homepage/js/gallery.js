@@ -156,8 +156,9 @@ function filterTags(tagInput, imgs) {
     return filtered;
 }
 
-function renderSearch(input) {
+function renderSearch() {
     // console.log(input);
+    var input = document.querySelector('.searchInput').value;
     var filtered = filterTagsByChars(input, imgs);
     renderImgs(filtered);
 }
