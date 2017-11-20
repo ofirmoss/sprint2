@@ -93,11 +93,11 @@ function renderKeyWords(imgs) {
 
     keywordsRepeats.forEach(function (keyword) {
         if (keyword.repeats === 1) strHtml += `<h6>${keyword.txt} </h6>`;
-        else if (keyword.repeats <= 10) strHtml += `<h5>${keyword.txt} </h5>`;
-        else if (keyword.repeats <= 20) strHtml += `<h4>${keyword.txt} </h4>`;
-        else if (keyword.repeats <= 30) strHtml += `<h3>${keyword.txt} </h3>`;
-        else if (keyword.repeats <= 40) strHtml += `<h2>${keyword.txt} </h2>`;
-        else if (keyword.repeats <= 50) strHtml += `<h1>${keyword.txt} </h1>`;
+        else if (keyword.repeats <= 10) strHtml += `<h5>${keyword.txt} </h5 onclick = "filterTagsByChar(this.innerText)">`;
+        else if (keyword.repeats <= 20) strHtml += `<h4>${keyword.txt} </h4 onclick = "filterTagsByChar(this.innerText)">`;
+        else if (keyword.repeats <= 30) strHtml += `<h3>${keyword.txt} </h3 onclick = "filterTagsByChar(this.innerText)">`;
+        else if (keyword.repeats <= 40) strHtml += `<h2>${keyword.txt} </h2 onclick = "filterTagsByChar(this.innerText)">`;
+        else if (keyword.repeats <= 50) strHtml += `<h1>${keyword.txt} </h1 onclick = "filterTagsByChar(this.innerText)">`;
     })
 
     var keywords = document.querySelector('.keywords');
