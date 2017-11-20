@@ -20,7 +20,7 @@ function createMeme(imgId) {
 }
 
 function addtxt() {
-
+    
     var memeContainer = document.querySelector('.memeContainer');
     memeContainer.innerHTML += `
     
@@ -45,6 +45,9 @@ function addtxt() {
     // console.log(currSize);
     txtCount++;
     // var txt = document.querySelector('');
+    syncUpdateTextBoxes()
+    renderTexts();
+
 }
 
 function removeTxt(txtIdx) {
@@ -132,7 +135,7 @@ function initiateFontSize() {
 function changeFontSize(nodeList, wantedFontSize) {
     for (let i = 0; i < nodeList.length; i++) {
         nodeList[i].style.fontSize = wantedFontSize + 'px';
-        gCanvasTxts[i].fontSize = wantedFontSize + 'px';
+        gCanvasTxts[i].fontSize = wantedFontSize*1.8 + 'px';
     }
 }
 
@@ -161,18 +164,19 @@ function getCoords(childEl, parentId) {
 }
 // var coords = getCoords('canvas','canvas')
 
-function renderText(canvasTxt) {
+function renderText(canvasTxt,idx) {
     if (!canvasTxt.display) return;
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    ctx.font = canvasTxt.fontSize + ' ' + canvasTxt.fontSize;
+    // console.log(canvasTxt.fontSize);
+    ctx.font = canvasTxt.fontSize + ' Arial';
     ctx.fillStyle = canvasTxt.fontColor;
 
-    var renderAt = calculatePrintLocation(canvasTxt.xcoord,canvasTxt.ycoord);
-    console.log(renderAt);
+    var renderAt = calculatePrintLocation(canvasTxt.xcoord,canvasTxt.ycoord,idx);
+    // console.log(renderAt);
     ctx.strokeText(canvasTxt.text, renderAt.cordX, renderAt.cordY);
-
-
+    ctx.fillText(canvasTxt.text, renderAt.cordX, renderAt.cordY);
+    
 }
 
 function updateCoords(textBox) {
@@ -187,13 +191,14 @@ function updateCoords(textBox) {
 
 function updateText(textBox, id) {
     // var boxId = 'txt' + id;
+    console.log(textBox);
     gCanvasTxts[id].text = textBox.value;
+    renderText(gCanvasTxts[id],id)
 }
 
 function getLoc() {
     var id = '#txt' + 0
     var elmnt = document.querySelector(id);
-    console.log()
     var canvas = document.querySelector('#canvas');
 
 
@@ -205,11 +210,13 @@ function getLoc() {
 }
 
 
-function calculatePrintLocation(xcoord,ycoord,inputWidth){
+function calculatePrintLocation(xcoord,ycoord,id){
     var canvContainerWidth = document.querySelector('canvas').clientWidth;
     var canvContainerHeight = document.querySelector('canvas').clientHeight;
+    // var inputWidth = document.querySelector(`#txt${id} input`).clientWidth;
+    // var inputHeight = document.querySelector(`#txt${id} input`).clientHeight;
+    var inputHeight = 19.2;
     var inputWidth = 243;
-    var inputHeight = 19;
     var cordX = (xcoord + inputWidth/2) * (gCanvWidth/canvContainerWidth);
     var cordY = (ycoord + inputHeight/2) * (gCanvHeight/canvContainerHeight);
     return {
@@ -218,6 +225,25 @@ function calculatePrintLocation(xcoord,ycoord,inputWidth){
     }
 }
 
+
+function renderTexts(){
+    for (let i = 0; i < gCanvasTxts.length; i++) {
+        var textBox = gCanvasTxts[i];
+        // console.log(textBox);
+        renderText(textBox,i);
+
+        
+    }
+}
+
+function syncUpdateTextBoxes(){
+    var boxes = document.querySelectorAll('.mydiv input');
+    console.log(boxes);
+    for (let i = 0; i < boxes.length; i++) {
+        boxes[i].value = gCanvasTxts[i].text;  
+        
+    }
+}
 // // dragElement(document.querySelector(".mydiv"));
 
 // function dragElement(elmnt) {
