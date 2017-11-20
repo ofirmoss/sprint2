@@ -57,7 +57,7 @@ function addtxt() {
 
 function removeTxt(txtIdx) {
     var id = '#txt' + txtIdx
-    document.querySelector(id).classList.add('display-none');
+    document.querySelector(id).classList.add('hide');
     gCanvasTxts.display = false;
 
 }
@@ -122,7 +122,7 @@ var mydragg = function () {
 
 function downloadImg(elLink) {
     renderTexts();
-    var canvas = document.querySelector('canvas');
+    var canvas = document.querySelector('#canvas');
     elLink.href = canvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
     
