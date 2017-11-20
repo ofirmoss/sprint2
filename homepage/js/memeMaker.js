@@ -4,6 +4,8 @@ var txtCount = 0;
 
 var gCurrImg;
 
+var gCanvas = [];
+
 window.onload = function () {
     renderCanvasImg();
 };
