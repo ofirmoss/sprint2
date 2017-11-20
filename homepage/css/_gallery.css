@@ -90,7 +90,7 @@
     margin: 0 0 5px 5px;
     color: rgb(145, 140, 140);
     align-self: center;
-    
+    cursor: pointer;
 }
 
 .search-box{

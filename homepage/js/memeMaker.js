@@ -51,7 +51,7 @@ function renderCanvasImg() {
     var c = document.querySelector('canvas');
     var ctx = c.getContext('2d');
     var img = document.querySelector('.memeImg');
-    ctx.drawImage(img, 0, 0, img.width, img.height);
+    ctx.drawImage(img, 0, 0, c.width, c.height);
 }
 
 
