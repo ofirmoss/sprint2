@@ -1,6 +1,6 @@
 'use strict'
 
-var txtCount = 0;
+var txtCount = 1;
 
 var gCurrImg;
 
@@ -23,29 +23,18 @@ function addtxt() {
     <i onclick=removeTxt(${txtCount}) class="fa fa-trash" aria-hidden="true"></i>    
     </div>  
 `
-gCanvas.push({
-    text: '',
-    fontColor: 'white',
-    fontsize: '20px',
-    xcoord: 0,
-    ycoord: 8,
-    display: true
-})
 
-    
+    renderCanvasImg();
     var id = '#txt' + txtCount;
     document.querySelector(id + ' input').style.fontSize = currSize + 'px';
     console.log(currSize);
     txtCount++;
-    renderCanvasImg();
-    
     // var txt = document.querySelector('');
 }
 
 function removeTxt(txtIdx) {
     var id = '#txt' + txtIdx
     document.querySelector(id).classList.add('display-none');
-    // gCanvas.display = false;
 }
 
 function renderCanvasImg() {
@@ -109,7 +98,7 @@ function downloadImg(elLink) {
     elLink.download = 'perfectMeme.jpg';
 }
 
-// var currSize = 15;
+var currSize = 15;
 
 function initiateFontSize() {
     currSize = document.querySelector('.font-size').value;
@@ -123,7 +112,8 @@ function initiateFontSize() {
 function changeFontSize(nodeList, wantedFontSize) {
     for (let i = 0; i < nodeList.length; i++) {
         nodeList[i].style.fontSize = wantedFontSize + 'px';
-        gCanvasTxts[i].fontSize = wantedFontSize + 'px';
+
+
     }
 }
 
@@ -141,7 +131,6 @@ function getCoords(childId, parentId) {
 }
 
 var coords = getCoords('canvas','canvas')
-
 var gCanvasTxts = [
                 {
                     text: 'blablabla',
@@ -156,12 +145,13 @@ var gCanvasTxts = [
 
 
 
-function renderText(gCanvas) {
+function renderText(canvasTxt) {
+    if(!canvasTxt.display) return;
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    ctx.font = gCanvas.fontSize + ' ' + gCanvas.fontSize;
-    ctx.fillStyle = gCanvas.fontColor;
-    ctx.strokeText(gCanvas.text, gCanvas.xcoord, gCanvas.ycoord);
+    ctx.font = canvasTxt.fontSize + ' ' + canvasTxt.fontSize;
+    ctx.fillStyle = canvasTxt.fontColor;
+    ctx.strokeText(canvasTxt.text, canvasTxt.xcoord, canvasTxt.ycoord);
 
     
 }
