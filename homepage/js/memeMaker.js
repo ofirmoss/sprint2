@@ -9,6 +9,10 @@ var gCurrImg;
 
 var gCanvasTxts = [];
 
+var currSize = '30px';
+
+var currColor = 'white';
+
 
 window.onload = function () {
     renderCanvasImg();
@@ -32,8 +36,8 @@ function addtxt() {
 `
     gCanvasTxts.push({
         text: '',
-        fontColor: 'white',
-        fontSize: '20px',
+        fontColor: currColor,
+        fontSize: currSize,
         xcoord: 0,
         ycoord: 0,
         display: true
@@ -46,7 +50,8 @@ function addtxt() {
     txtCount++;
     // var txt = document.querySelector('');
     syncUpdateTextBoxes()
-    renderTexts();
+    changeFontColor();
+    // renderTexts();
 
 }
 
@@ -116,16 +121,16 @@ var mydragg = function () {
 
 
 function downloadImg(elLink) {
+    renderTexts();
     var canvas = document.querySelector('canvas');
     elLink.href = canvas.toDataURL();
     elLink.download = 'perfectMeme.jpg';
+    
 }
-
-var currSize = 15;
 
 function initiateFontSize() {
     currSize = document.querySelector('.fontSizeInput').value;
-    console.log(currSize);
+    // console.log(currSize);
     var textDivs = document.querySelectorAll('.memeContainer input');
     changeFontSize(textDivs, currSize);
 }
@@ -140,12 +145,12 @@ function changeFontSize(nodeList, wantedFontSize) {
 }
 
 function changeFontColor() {
-    var wantedFontColor = document.querySelector('.fontColor').value;    
+    currColor = document.querySelector('.fontColor').value;    
     var textDivs = document.querySelectorAll('.memeContainer input');
 
     for (let i = 0; i < textDivs.length; i++) {
-        textDivs[i].style.color = wantedFontColor;
-        gCanvasTxts[i].fontColor = wantedFontColor;
+        textDivs[i].style.color = currColor;
+        gCanvasTxts[i].fontColor = currColor;
     }
 }
 
@@ -231,9 +236,9 @@ function updateCoords(textBox) {
 
 function updateText(textBox, id) {
     // var boxId = 'txt' + id;
-    console.log(textBox);
+    // console.log(textBox);
     gCanvasTxts[id].text = textBox.value;
-    renderText(gCanvasTxts[id],id)
+    // renderText(gCanvasTxts[id],id)
 }
 
 function getLoc() {
