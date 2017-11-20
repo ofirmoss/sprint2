@@ -38,6 +38,8 @@ function toggleSearch(){
     function goToKeyWords(){
         document.querySelector('.keywords').classList.remove('display-none');
         document.querySelector('.search-box').classList.add('display-none');
+        // document.querySelector('.imgs').innerHTML = '';
+        
         document.querySelector('.imgs').classList.add('display-none');
         // document.querySelector('.memeMakerContainer').classList.add('display-none');
     }
