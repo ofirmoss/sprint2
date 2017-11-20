@@ -1,4 +1,7 @@
 'use strict'
+var gCanvWidth = 500;
+
+var gCanvHeight = 500;
 
 var txtCount = 0;
 
@@ -30,16 +33,16 @@ function addtxt() {
     gCanvasTxts.push({
         text: '',
         fontColor: 'white',
-        fontsize: '20px',
+        fontSize: '20px',
         xcoord: 0,
-        ycoord: 8,
+        ycoord: 0,
         display: true
     })
 
     renderCanvasImg();
     var id = '#txt' + txtCount;
     document.querySelector(id + ' input').style.fontSize = currSize + 'px';
-    console.log(currSize);
+    // console.log(currSize);
     txtCount++;
     // var txt = document.querySelector('');
 }
@@ -53,6 +56,8 @@ function removeTxt(txtIdx) {
 
 function renderCanvasImg() {
     var c = document.querySelector('canvas');
+    c.width = gCanvWidth;
+    c.height = gCanvHeight;
     var ctx = c.getContext('2d');
     var img = document.querySelector('.memeImg');
     ctx.drawImage(img, 0, 0, c.width, c.height);
@@ -95,6 +100,7 @@ var mydragg = function () {
                 if (aX + eWi > cWi) aX = cWi - eWi;
                 if (aY + eHe > cHe) aY = cHe - eHe;
                 mydragg.move(divid, aX, aY);
+                updateCoords(divid);
             }
         },
         stopMoving: function (container) {
@@ -132,10 +138,11 @@ function changeFontSize(nodeList, wantedFontSize) {
 }
 
 
-function getCoords(childId, parentId) {
+function getCoords(childEl, parentId) {
     var parentPos = document.querySelector('#' + parentId).getBoundingClientRect(),
-        childrenPos = document.querySelector('#' + childId).getBoundingClientRect(),
-        relativePos = {};
+        // childrenPos = document.querySelector('#' + childId).getBoundingClientRect(),
+        childrenPos = childEl.getBoundingClientRect();
+    var relativePos = {};
 
     relativePos.top = childrenPos.top - parentPos.top,
         relativePos.left = childrenPos.left - parentPos.left,
@@ -151,20 +158,55 @@ function renderText(canvasTxt) {
     var ctx = canvas.getContext("2d");
     ctx.font = canvasTxt.fontSize + ' ' + canvasTxt.fontSize;
     ctx.fillStyle = canvasTxt.fontColor;
-    ctx.strokeText(canvasTxt.text, canvasTxt.xcoord, canvasTxt.ycoord);
+
+    var renderAt = calculatePrintLocation(canvasTxt.xcoord,canvasTxt.ycoord);
+    console.log(renderAt);
+    ctx.strokeText(canvasTxt.text, renderAt.cordX, renderAt.cordY);
 
 
 }
 
 function updateCoords(textBox) {
-    getCoords(textBox, 'canvas');
-    textElement.xcoord = x;
-    textElement.ycoord = y
+    var currPos = getCoords(textBox, 'canvas');
+    var index = textBox.id[3]
+    gCanvasTxts[index].xcoord = currPos.left;
+    gCanvasTxts[index].ycoord = currPos.top;
+    // console.log(gCanvasTxts[index]);
+    // textElement.xcoord = x;
+    // textElement.ycoord = y
 }
 
-function updateText(textBox,id){
+function updateText(textBox, id) {
     // var boxId = 'txt' + id;
     gCanvasTxts[id].text = textBox.value;
+}
+
+function getLoc() {
+    var id = '#txt' + 0
+    var elmnt = document.querySelector(id);
+    console.log()
+    var canvas = document.querySelector('#canvas');
+
+
+    gCanvasTxts[0].xcoord = elmnt.offsetLeft - canvas.offsetLeft + 70;
+    gCanvasTxts[0].ycoord = elmnt.offsetTop - canvas.offsetTop - 20;
+    // gCanvasInfo.texts[id - 1].posX = elmnt.offsetLeft - gCanvas.offsetLeft + 20;
+    // gCanvasInfo.texts[id - 1].posY = elmnt.offse tTop - gCanvas.offsetTop + 40;
+    // renderCanvas()
+}
+
+
+function calculatePrintLocation(xcoord,ycoord,inputWidth){
+    var canvContainerWidth = document.querySelector('canvas').clientWidth;
+    var canvContainerHeight = document.querySelector('canvas').clientHeight;
+    var inputWidth = 243;
+    var inputHeight = 19;
+    var cordX = (xcoord + inputWidth/2) * (gCanvWidth/canvContainerWidth);
+    var cordY = (ycoord + inputHeight/2) * (gCanvHeight/canvContainerHeight);
+    return {
+        cordX: cordX,
+        cordY: cordY
+    }
 }
 
 // // dragElement(document.querySelector(".mydiv"));
