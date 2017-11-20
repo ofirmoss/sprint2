@@ -1,10 +1,11 @@
 'use strict'
 
-var txtCount = 1;
+var txtCount = 0;
 
 var gCurrImg;
 
-var gCanvas = [];
+var gCanvasTxts = [];
+
 
 window.onload = function () {
     renderCanvasImg();
@@ -20,19 +21,20 @@ function addtxt() {
     var memeContainer = document.querySelector('.memeContainer');
     memeContainer.innerHTML += `
     
-    <div id="txt${txtCount}" class="mydiv" onmousedown="mydragg.startMoving(this,'container',event)" onmouseup="mydragg.stopMoving('container')">
-    <input type="text">
+    <div id="txt${txtCount}" class="mydiv" onmousedown="mydragg.startMoving(this,'container',event)"
+     onmouseup="mydragg.stopMoving('container')">
+    <input type="text" onkeyup='updateText(this,${txtCount})'>
     <i onclick=removeTxt(${txtCount}) class="fa fa-trash" aria-hidden="true"></i>    
     </div>  
 `
-gCanvas.push({
-    text: '',
-    fontColor: 'white',
-    fontsize: '20px',
-    xcoord: 0,
-    ycoord: 8,
-    display: true
-})
+    gCanvasTxts.push({
+        text: '',
+        fontColor: 'white',
+        fontsize: '20px',
+        xcoord: 0,
+        ycoord: 8,
+        display: true
+    })
 
     renderCanvasImg();
     var id = '#txt' + txtCount;
@@ -45,6 +47,8 @@ gCanvas.push({
 function removeTxt(txtIdx) {
     var id = '#txt' + txtIdx
     document.querySelector(id).classList.add('display-none');
+    gCanvasTxts.display = false;
+
 }
 
 function renderCanvasImg() {
@@ -122,7 +126,7 @@ function initiateFontSize() {
 function changeFontSize(nodeList, wantedFontSize) {
     for (let i = 0; i < nodeList.length; i++) {
         nodeList[i].style.fontSize = wantedFontSize + 'px';
-        gCanvasTxts[i].fontSize = wantedFontSize + 'px';        
+        gCanvasTxts[i].fontSize = wantedFontSize + 'px';
 
     }
 }
@@ -134,42 +138,34 @@ function getCoords(childId, parentId) {
         relativePos = {};
 
     relativePos.top = childrenPos.top - parentPos.top,
+        relativePos.left = childrenPos.left - parentPos.left,
         relativePos.right = childrenPos.right - parentPos.right,
-        relativePos.bottom = childrenPos.bottom - parentPos.bottom,
-        relativePos.left = childrenPos.left - parentPos.left;
+        relativePos.bottom = childrenPos.bottom - parentPos.bottom;
     return relativePos;
 }
-
-var coords = getCoords('canvas','canvas')
-var gCanvasTxts = [
-                {
-                    text: 'blablabla',
-                    fontColor: 'red',
-                    fontsize: '20px',
-                    xcoord: 40,
-                    ycoord: 40,
-                    display: true
-            }
-            ]
-
-
-
+// var coords = getCoords('canvas','canvas')
 
 function renderText(canvasTxt) {
-    if(!canvasTxt.display) return;
+    if (!canvasTxt.display) return;
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     ctx.font = canvasTxt.fontSize + ' ' + canvasTxt.fontSize;
     ctx.fillStyle = canvasTxt.fontColor;
     ctx.strokeText(canvasTxt.text, canvasTxt.xcoord, canvasTxt.ycoord);
 
-    
-}
-
-function createT(){
 
 }
 
+function updateCoords(textBox) {
+    getCoords(textBox, 'canvas');
+    textElement.xcoord = x;
+    textElement.ycoord = y
+}
+
+function updateText(textBox,id){
+    // var boxId = 'txt' + id;
+    gCanvasTxts[id].text = textBox.value;
+}
 
 // // dragElement(document.querySelector(".mydiv"));
 
@@ -202,7 +198,7 @@ function createT(){
 //     console.log('x: ',e.clientX);
 //     console.log('y: ',e.clientY);
 //     // set the element's new position:
-//     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+//     elmnt.style.top = (elm nt.offsetTop - pos2) + "px";
 //     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
 //   }
 
