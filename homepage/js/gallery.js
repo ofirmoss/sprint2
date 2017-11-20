@@ -92,12 +92,12 @@ function renderKeyWords(imgs) {
     // console.log(keywordsRepeats);
 
     keywordsRepeats.forEach(function (keyword) {
-        if (keyword.repeats === 1) strHtml += `<h6>${keyword.txt} </h6>`;
-        else if (keyword.repeats <= 10) strHtml += `<h5>${keyword.txt} </h5 onclick = "filterTagsByChar(this.innerText)">`;
-        else if (keyword.repeats <= 20) strHtml += `<h4>${keyword.txt} </h4 onclick = "filterTagsByChar(this.innerText)">`;
-        else if (keyword.repeats <= 30) strHtml += `<h3>${keyword.txt} </h3 onclick = "filterTagsByChar(this.innerText)">`;
-        else if (keyword.repeats <= 40) strHtml += `<h2>${keyword.txt} </h2 onclick = "filterTagsByChar(this.innerText)">`;
-        else if (keyword.repeats <= 50) strHtml += `<h1>${keyword.txt} </h1 onclick = "filterTagsByChar(this.innerText)">`;
+        if (keyword.repeats === 1) strHtml += `<h6 onclick = "filterKey(this)">${keyword.txt} </h6>`;
+        else if (keyword.repeats <= 10) strHtml += `<h5 onclick = "filterKey(this)">${keyword.txt} </h5>`;
+        else if (keyword.repeats <= 20) strHtml += `<h4 onclick = "filterKey(this)">${keyword.txt} </h4>`;
+        else if (keyword.repeats <= 30) strHtml += `<h3 onclick = "filterKey(this)">${keyword.txt} </h3>`;
+        else if (keyword.repeats <= 40) strHtml += `<h2 onclick = "filterKey(this)">${keyword.txt} </h2">`;
+        else if (keyword.repeats <= 50) strHtml += `<h1 onclick = "filterKey(this)">${keyword.txt} </h1>`;
     })
 
     var keywords = document.querySelector('.keywords');
@@ -192,6 +192,15 @@ function renderSearch(input) {
     return filtered;
 }
 
+
+function filterKey(ElKeyword){
+var toFilter = ElKeyword.innerText
+var filtered = filterTags(toFilter,imgs);
+renderImgs(filtered)
+document.querySelector('.imgs').classList.remove('display-none');
+document.querySelector('.keywords').classList.add('display-none');
+
+}
 
 // var tags = tagInput.split(' ');
 // var filtered = imgs.slice();
