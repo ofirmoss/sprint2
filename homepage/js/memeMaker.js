@@ -179,6 +179,46 @@ function renderText(canvasTxt,idx) {
     
 }
 
+var txtPosition = {
+    posX: 150,
+    posY: 150
+}
+
+
+function renderMobileTxt(){
+    renderCanvasImg();
+    var canvas = document.getElementById("canvas");
+    var ctx = canvas.getContext("2d");
+    ctx.font = 60 + 'px Arial';
+    ctx.fillStyle = 'white';
+    ctx.lineWidth = 2;
+    // ctx.fillStyle = canvasTxt.fontColor;
+    
+    var moblieInput = document.querySelector(".moblieInput");
+    ctx.fillText(moblieInput.value, txtPosition.posX, txtPosition.posY);    
+    ctx.strokeText(moblieInput.value, txtPosition.posX, txtPosition.posY);
+    
+}
+
+function moveTxt(direction){
+    if (direction === 'd') {
+        txtPosition.posY += 10;
+    }
+    if (direction === 'u') {
+        txtPosition.posY -= 10;
+    }
+    if (direction === 'l') {
+        txtPosition.posX -= 10;
+    }
+    if (direction === 'r') {
+        txtPosition.posX += 10;
+    }
+    renderMobileTxt();
+}
+
+
+
+
 function updateCoords(textBox) {
     var currPos = getCoords(textBox, 'canvas');
     var index = textBox.id[3]

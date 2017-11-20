@@ -85,13 +85,32 @@
                 <li class="addtxt" onclick="addtxt()">
                     <i class="fa fa-plus-circle" aria-hidden="true"></i>
                 </li>
+
                 <li id="fontColor">
                     <input class="fontColor" type="color" value="#f9fcfb" onchange="changeFontColor()"></input>
                     <!-- <i class="fa fa-tint" aria-hidden="true"></i> -->
                 </li>
+
                 <li>
                     <i class="fa fa-text-width" aria-hidden="true" onclick="initiateFontSize()"></i>
-                    <input class="fontSizeInput" type="text"> </li>
+                    <input class="fontSizeInput" type="text"> 
+                </li>
+
+                <li onclick="moveTxt('d')">
+                    <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                </li>
+
+                <li onclick="moveTxt('u')">
+                    <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                </li>
+
+                <li onclick="moveTxt('r')">
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </li>
+                
+                <li onclick="moveTxt('l')">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </li>
             </ul>
 
 
@@ -100,6 +119,8 @@
 
                 </canvas>
             </div>
+
+            <input type="text" class="moblieInput" oninput="renderMobileTxt()">
 
 
             <button class="download">
